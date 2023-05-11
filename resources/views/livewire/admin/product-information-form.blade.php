@@ -11,19 +11,22 @@
                     {{-- Name --}}
                     <div>
                         <x-label for="name" value="{{ __('Name') }}" />
-                        <x-input wire:model.defer="product.name" type="text" id="name" class="block w-full mt-1 sm:text-sm" placeholder="Enter product name" />
+                        <x-input wire:model.defer="product.name" type="text" id="name"
+                            class="block w-full mt-1 sm:text-sm" placeholder="Enter product name" />
                         <x-input-error for="product.name" class="mt-2" />
                     </div>
                     {{-- Slug --}}
                     <div>
                         <x-label for="slug" value="{{ __('Slug') }}" />
-                        <x-input wire:model.defer="product.slug" type="text" id="slug" class="block w-full mt-1 sm:text-sm" placeholder="Enter product slug" />
+                        <x-input wire:model.defer="product.slug" type="text" id="slug"
+                            class="block w-full mt-1 sm:text-sm" placeholder="Enter product slug" />
                         <x-input-error for="product.slug" class="mt-2" />
                     </div>
                     {{-- Price --}}
                     <div>
                         <x-label for="price" value="{{ __('Price') }}" />
-                        <x-input wire:model.defer="product.price" type="number" step="any" id="price" class="mt-1 no-spinners sm:text-sm" placeholder="0.00" />
+                        <x-input wire:model.defer="product.price" type="number" step="any" id="price"
+                            class="mt-1 no-spinners sm:text-sm" placeholder="0.00" />
                         <x-input-error for="product.price" class="mt-2" />
                     </div>
                     {{-- Description --}}

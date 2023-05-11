@@ -6,9 +6,9 @@
     </div>
 
     <div class="flex flex-col mt-6">
-        <div class="overflow-x-auto">
+        <div class="overflow-x-scroll lg:overflow-x-auto">
             <div class="inline-block w-full align-middle">
-                <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+                <div class="overflow-x-scroll border-b border-gray-200 shadow lg:overflow-x-hidden sm:rounded-lg">
                     <table class="w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                         <tr>

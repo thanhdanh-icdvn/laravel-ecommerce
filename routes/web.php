@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\Admin\OrderList;
+use App\Http\Livewire\Admin\OrderManager;
 use App\Http\Livewire\Admin\ProductCreator;
 use App\Http\Livewire\Admin\ProductList;
 use App\Http\Livewire\Admin\ProductManager;
-use App\Http\Livewire\Guest\ProductDetails;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('products', ProductList::class)->name('products.index');
     Route::get('products/create', ProductCreator::class)->name('products.create');
-    Route::get('products/{product}/edit', ProductManager::class)->name('products.edit');
+    Route::get('products/{product}', ProductManager::class)->name('products.edit');
+    Route::get('orders', OrderList::class)->name('orders.index');
+    Route::get('orders/{order}', OrderManager::class)->name('orders.show');
+
 });
 
 
