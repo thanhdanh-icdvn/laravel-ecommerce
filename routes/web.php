@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\Auth\SocialController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\Admin\OrderList;
 use App\Http\Livewire\Admin\OrderManager;
@@ -31,8 +32,16 @@ Route::get('dashboard', function () {
 
 Route::prefix('auth')->group(function(){
     Route::prefix('google')->group(function(){
-        Route::get('/',[GoogleController::class,'redirectToGoogle']);
-        Route::get('callback',[GoogleController::class,'handleGoogleCallback']);
+        Route::get('/',[SocialController::class,'googleRedirect']);
+        Route::get('callback',[SocialController::class,'handleGoogleLoginCallback']);
+    });
+    Route::prefix('facebook')->group(function(){
+        Route::get('/',[SocialController::class,'facebookRedirect']);
+        Route::get('callback',[SocialController::class,'handleFacebookLoginCallback']);
+    });
+    Route::prefix('zalo')->group(function(){
+        Route::get('/',[SocialController::class,'zaloRedirect']);
+        Route::get('callback',[SocialController::class,'handleZaloLoginCallback']);
     });
 });
 
