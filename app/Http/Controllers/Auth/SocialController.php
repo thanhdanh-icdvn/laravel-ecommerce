@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -35,9 +36,9 @@ class SocialController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'password' => Hash::make('Aa@123456')
+                    'password' => Hash::make('Aa@123456'),
+                    'profile_photo_url' => $user->getAvatar()
                 ]);
-
                 Auth::login($newUser);
 
                 return redirect()->intended('dashboard');
@@ -58,18 +59,17 @@ class SocialController extends Controller
 
             $user = Socialite::driver('facebook')->user();
             $isUserExist = User::where('fb_id', $user->id)->first();
-
             if($isUserExist){
                 Auth::login($isUserExist);
                 return redirect('/dashboard');
             }else{
                 $newUser = User::updateOrCreate(['email' => $user->email],[
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'fb_id' => $user->id,
-                    'password' => Hash::make('Aa@123456')
+                    'name' => $user->getName(),
+                    'email' => $user->getId().'@facebook.com',
+                    'fb_id' => $user->getId(),
+                    'password' => Hash::make('Aa@123456'),
+                    'profile_photo_url' => $user->getAvatar()
                 ]);
-
                 Auth::login($newUser);
                 return redirect('/dashboard');
             }
@@ -100,12 +100,12 @@ class SocialController extends Controller
 
             }else{
                 $newUser = User::updateOrCreate(['email' => $user->email],[
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'zalo_id'=> $user->id,
-                    'password' => Hash::make('Aa@123456')
-                ]);
+                    'name' => $user->getName(),
+                    'email' => $user->getId().'@zalo.vn',
+                    'zalo_id'=> $user->getId(),
+                    'password' => Hash::make('Aa@123456'),
 
+                ]);
                 Auth::login($newUser);
 
                 return redirect()->intended('dashboard');
