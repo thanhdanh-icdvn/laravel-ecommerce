@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\SocialAccount;
 use App\Models\User;
+use Laravel\Socialite\Contracts\User as ProviderUser;
 use Illuminate\Auth\Events\Registered as RegisteredEvent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -71,11 +72,12 @@ class SocialController extends Controller
      * @param $providerUser
      * @return mixed
      */
-    protected function findOrCreateUser($providerName, $providerUser)
+    protected function findOrCreateUser($providerName,ProviderUser $providerUser )
     {
         $social = SocialAccount::firstOrNew([
             'provider_user_id' => $providerUser->getId(),
-            'provider' => $providerName
+            'provider' => $providerName,
+            'profile_photo_url' => $providerUser->getAvatar()
         ]);
 
         if ($social->exists) {
