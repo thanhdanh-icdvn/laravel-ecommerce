@@ -31,17 +31,9 @@ Route::get('dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('auth')->group(function(){
-    Route::prefix('google')->group(function(){
-        Route::get('/',[SocialController::class,'googleRedirect']);
-        Route::get('callback',[SocialController::class,'handleGoogleLoginCallback']);
-    });
-    Route::prefix('facebook')->group(function(){
-        Route::get('/',[SocialController::class,'facebookRedirect']);
-        Route::get('callback',[SocialController::class,'handleFacebookLoginCallback']);
-    });
-    Route::prefix('zalo')->group(function(){
-        Route::get('/',[SocialController::class,'zaloRedirect']);
-        Route::get('callback',[SocialController::class,'handleZaloLoginCallback']);
+    Route::prefix('{provider}')->group(function(){
+        Route::get('/',[SocialController::class,'redirectToProvider'])->name('login')->where('provider','google|facebook|zalo');
+        Route::get('callback',[SocialController::class,'handleProviderCallback'])->where('provider','google|facebook|zalo');
     });
 });
 

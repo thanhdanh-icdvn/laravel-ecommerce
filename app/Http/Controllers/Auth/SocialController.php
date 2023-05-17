@@ -3,116 +3,121 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\SocialAccount;
 use App\Models\User;
-use Barryvdh\Debugbar\Facades\Debugbar;
-use Exception;
+use Illuminate\Auth\Events\Registered as RegisteredEvent;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialController extends Controller
 {
-    public function googleRedirect()
+
+    /**
+     * Redirect the user to the Provider authentication page.
+     *
+     * @param $provider String
+     * @return mixed
+     */
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
-    public function handleGoogleLoginCallback()
+    /**
+     * Obtain the user information from Provider.
+     *
+     * @param $provider string
+     * @throws \Exception
+     * @throws \Throwable
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function handleProviderCallback($provider)
     {
         try {
-
-            $user = Socialite::driver('google')->user();
-
-            $isUserExist = User::where('google_id', $user->id)->first();
-
-            if($isUserExist){
-
-                Auth::login($isUserExist);
-
-                return redirect()->intended('dashboard');
-
-            }else{
-                $newUser = User::updateOrCreate(['email' => $user->email],[
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'google_id'=> $user->id,
-                    'password' => Hash::make('Aa@123456'),
-                    'profile_photo_url' => $user->getAvatar()
-                ]);
-                Auth::login($newUser);
-
-                return redirect()->intended('dashboard');
+            $providerUser = Socialite::driver($provider)->user();
+        } catch (\Throwable | \Exception $e) {
+            // Send actual error message in development
+            if (config('app.debug')) {
+                throw $e;
             }
-
-        } catch (Exception $e) {
-            dd($e->getMessage());
+            // Lets suppress this error
+            return redirect()->route('login')
+                ->with('error', __('Unable to authenticate. Please try again.'));
         }
+
+        DB::beginTransaction();
+
+        $user = $this->findOrCreateUser($provider, $providerUser);
+        Auth::login($user, true);
+
+        // This session variable can help to determine if user is logged-in via socialite
+        session()->put([
+            'auth.social_id' => $providerUser->getId()
+        ]);
+
+        DB::commit();
+
+        return $this->authenticated($user)
+            ?: redirect()->intended($this->redirectTo());
+
     }
 
-    public function facebookRedirect()
+    /**
+     * Create a user if does not exist
+     *
+     * @param $providerName string
+     * @param $providerUser
+     * @return mixed
+     */
+    protected function findOrCreateUser($providerName, $providerUser)
     {
-        return Socialite::driver('facebook')->redirect();
-    }
-    public function handleFacebookLoginCallback()
-    {
-        try {
+        $social = SocialAccount::firstOrNew([
+            'provider_user_id' => $providerUser->getId(),
+            'provider' => $providerName
+        ]);
 
-            $user = Socialite::driver('facebook')->user();
-            $isUserExist = User::where('fb_id', $user->id)->first();
-            if($isUserExist){
-                Auth::login($isUserExist);
-                return redirect('/dashboard');
-            }else{
-                $newUser = User::updateOrCreate(['email' => $user->email],[
-                    'name' => $user->getName(),
-                    'email' => $user->getId().'@facebook.com',
-                    'fb_id' => $user->getId(),
-                    'password' => Hash::make('Aa@123456'),
-                    'profile_photo_url' => $user->getAvatar()
-                ]);
-                Auth::login($newUser);
-                return redirect('/dashboard');
-            }
-
-        } catch (Exception $exception) {
-            dd($exception->getMessage());
+        if ($social->exists) {
+            return $social->user;
         }
-    }
 
-    public function zaloRedirect()
-    {
-        return Socialite::driver('zalo')->redirect();
-    }
+        $user = User::firstOrNew([
+            'email' => $providerUser->getEmail()
+        ]);
 
-    public function handleZaloLoginCallback()
-    {
-        try {
-
-            $user = Socialite::driver('zalo')->user();
-
-            $isUserExist = User::where('zalo_id', $user->id)->first();
-
-            if($isUserExist){
-
-                Auth::login($isUserExist);
-
-                return redirect()->intended('dashboard');
-
-            }else{
-                $newUser = User::updateOrCreate(['email' => $user->email],[
-                    'name' => $user->getName(),
-                    'email' => $user->getId().'@zalo.vn',
-                    'zalo_id'=> $user->getId(),
-                    'password' => Hash::make('Aa@123456'),
-
-                ]);
-                Auth::login($newUser);
-
-                return redirect()->intended('dashboard');
-            }
-
-        } catch (Exception $e) {
-            dd($e->getMessage());
+        if (!$user->exists) {
+            $user->name = $providerUser->getName();
+            $user->password = Hash::make($providerUser->getId());
+            $user->save();
+            event(new RegisteredEvent($user));
         }
+
+        $social->user()->associate($user);
+        $social->save();
+
+        return $user;
+
+    }
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  User $user
+     * @return mixed
+     */
+    protected function authenticated(User $user)
+    {
+
+    }
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @return string
+     */
+    protected function redirectTo()
+    {
+        return route('dashboard');
     }
 }
