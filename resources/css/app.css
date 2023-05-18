@@ -1,7 +1,7 @@
+@import "@tabler/icons-webfont/tabler-icons";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer components{
     .btn-brand{

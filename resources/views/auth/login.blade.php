@@ -14,15 +14,20 @@
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
+        <div class="relative mt-4" x-data="{show: false }">
             <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block w-full mt-1" type="password" name="password" required
+            <x-text-input id="password" class="block w-full mt-1" name="password" required
                 autocomplete="current-password" />
-
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5 cursor-pointer">
+                <i x-on:click="show=! show" :class="{
+                    'mt-5 text-2xl ti':true,
+                    'ti-eye':show,
+                    'ti-eye-off':!show
+                }"></i>
+            </div>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
-
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
