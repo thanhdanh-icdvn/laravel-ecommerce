@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
+use Str;
 
 class SocialController extends Controller
 {
@@ -90,7 +91,7 @@ class SocialController extends Controller
 
         if (!$user->exists) {
             $user->name = $providerUser->getName();
-            $user->password = Hash::make($providerUser->getId());
+            $user->password = Hash::make(Str::random(16));
             $user->save();
             event(new RegisteredEvent($user));
         }

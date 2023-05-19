@@ -2,10 +2,14 @@
 
 namespace App\Http;
 
+use App\Console\Commands\MakeView;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
+    protected $command = [
+        MakeView::class
+    ];
     /**
      * The application's global HTTP middleware stack.
      *
@@ -64,5 +68,6 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'is_admin' => \App\Http\Middleware\IsAdmin::class,
     ];
 }
