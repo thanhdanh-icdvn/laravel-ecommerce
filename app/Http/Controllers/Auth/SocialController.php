@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\SocialAccount;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 use Illuminate\Auth\Events\Registered as RegisteredEvent;
 use Illuminate\Support\Facades\Auth;
@@ -121,6 +122,6 @@ class SocialController extends Controller
      */
     protected function redirectTo()
     {
-        return route('dashboard');
+        return route('admin');
     }
 }

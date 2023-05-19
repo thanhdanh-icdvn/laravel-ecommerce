@@ -36,13 +36,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Email:</strong>
-                    <textarea class="form-control" style="height:150px" name="email" placeholder="Email"></textarea>
+                    <input class="form-control" name="email" placeholder="Email" type="email">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Password:</strong>
-                    <input class="form-control" style="height:150px" name="password" placeholder="Email" type="password"></input>
+                    <input class="form-control" name="password" placeholder="Password" type="password" autocomplete="current-password">
                 </div>
             </div>
             <div class="text-center col-xs-12 col-sm-12 col-md-12">

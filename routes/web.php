@@ -25,20 +25,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// All route with prefix /admin
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {return view('dashboard');})->middleware(['auth'])->name('admin');
+    Route::resource('users', UserController::class);
+    Route::middleware('auth')->group(function () {
+        Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::get('products', ProductList::class)->name('products.index');
+        Route::get('products/create', ProductCreator::class)->name('products.create');
+        Route::get('products/{product}', ProductManager::class)->name('products.edit');
+        Route::get('orders', OrderList::class)->name('orders.index');
+        Route::get('orders/{order}', OrderManager::class)->name('orders.show');
+    });
+});
 
-Route::resource('users', UserController::class);
-
-Route::get('dashboard', function () {
-    return view('dashboard');
-})->middleware([
-        'auth',
-        // 'verified'
-        ])->name('dashboard');
-
-Route::prefix('auth')->group(function(){
-    Route::prefix('{provider}')->group(function(){
-        Route::get('/',[SocialController::class,'redirectToProvider'])->name('login')->where('provider','google|facebook|zalo');
-        Route::get('callback',[SocialController::class,'handleProviderCallback'])->where('provider','google|facebook|zalo');
+Route::prefix('auth')->group(function () {
+    Route::prefix('{provider}')->group(function () {
+        Route::get('/', [SocialController::class, 'redirectToProvider'])->name('login')->where('provider', 'google|facebook|zalo');
+        Route::get('callback', [SocialController::class, 'handleProviderCallback'])->where('provider', 'google|facebook|zalo');
     });
 });
 
@@ -57,17 +63,4 @@ Route::post('email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-Route::middleware('auth')->group(function () {
-    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('products', ProductList::class)->name('products.index');
-    Route::get('products/create', ProductCreator::class)->name('products.create');
-    Route::get('products/{product}', ProductManager::class)->name('products.edit');
-    Route::get('orders', OrderList::class)->name('orders.index');
-    Route::get('orders/{order}', OrderManager::class)->name('orders.show');
-});
-
-
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
