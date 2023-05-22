@@ -1,0 +1,1 @@
+{{-- resources/views/layouts/templates/news.blade.php --}}

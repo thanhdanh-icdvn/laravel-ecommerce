@@ -33,6 +33,7 @@ class MakeView extends Command
         $view = $this->argument('view');
 
         $path = $this->viewPath($view);
+        $content = "{{-- ".$path." --}}";
 
         $this->createDir($path);
 
@@ -41,7 +42,7 @@ class MakeView extends Command
             return;
         }
 
-        File::put($path, $path);
+        File::put($path,  $content);
 
         $this->info("View {$path} created.");
     }
