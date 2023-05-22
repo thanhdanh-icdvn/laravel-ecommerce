@@ -7,7 +7,7 @@
                 <h2>Laravel 8 CRUD Example</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('users.create') }}"> Create New user</a>
+                <a class="text-success" href="{{ route('users.create') }}"> Create New user</a>
             </div>
         </div>
     </div>
@@ -18,34 +18,36 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th width="280px">Action</th>
-        </tr>
-        @foreach ($users as $user)
+    <table class="table-auto">
+        <thead>
             <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>
-                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
-
-                        <a class="btn btn-info" href="{{ route('users.show', $user->id) }}">Show</a>
-
-                        <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
-
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
             </tr>
-        @endforeach
+        </thead>
+        <tbody>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>
+                        <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                            <ul class="flex flex-row w-full">
+                                <li><a class="text-info" href="{{ route('users.show', $user->id) }}">Show</a></li>
+                                <li><a class="text-primary" href="{{ route('users.edit', $user->id) }}">Edit</a></li>
+                                <li>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-danger">Delete</button>
+                                </li>
+                            </ul>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
-
-    {!! $users->links() !!}
 @endsection

@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -8,13 +8,6 @@
                     <a href="{{ route('admin') }}">
                         <x-application-logo class="block w-auto text-gray-800 fill-current h-9" />
                     </a>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                        {{ __('Admin') }}
-                    </x-nav-link>
                 </div>
             </div>
 
