@@ -13,8 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $paginateNumber = 15;
-        $users = User::paginate($paginateNumber);
+        $paginateNumber = 10;
+        $users = User::search()->paginate($paginateNumber);
         // dd($user);
         return view('admin.users.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $paginateNumber);
@@ -83,7 +83,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-
         return redirect()->route('users.index')
             ->with('success', 'User deleted successfully');
     }

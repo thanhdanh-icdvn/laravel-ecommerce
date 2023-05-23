@@ -1,4 +1,5 @@
-@extends('admin.users.layout')
+@extends('layouts.admin')
+@section('title', 'Cập nhật người dùng')
 
 @section('content')
     <div class="row">

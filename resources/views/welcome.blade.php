@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.client')
+@section('title', 'Trang chủ')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    <!-- Vite -->
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
-</head>
-
-<body class="antialiased">
-    <div>
-        <div class="p-4 mt-1 border rounded-md shadow-sm">
-            <div>Test editor</div>
-        </div>
-    </div>
-</body>
-
-</html>
+@section('content')
+    <p>This is my body content.</p>
+@endsection

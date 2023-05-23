@@ -1,4 +1,5 @@
-@extends('admin.users.layout')
+@extends('layouts.admin')
+@section('title', 'Chi tiết người dùng')
 
 @section('content')
     <div class="row">

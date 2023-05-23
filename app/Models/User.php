@@ -49,4 +49,13 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<string, string>
      */
     protected $appends = [];
+
+    public function scopeSearch($query){
+        $searchTerm = request()->search;
+        if(!empty($searchTerm)){
+            $query = $query->where('name','LIKE','%'.$searchTerm.'%')
+            ->orWhere('email','LIKE','%'.$searchTerm.'%');
+        }
+        return $query;
+    }
 }
