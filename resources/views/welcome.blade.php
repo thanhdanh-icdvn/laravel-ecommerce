@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.front')
 @section('title', 'Trang chủ')
 
 @section('content')

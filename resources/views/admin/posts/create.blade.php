@@ -1,11 +1,11 @@
 @extends('layouts.admin')
-@section('title', 'Cập nhật người dùng')
+@section('title', 'Thêm bài viết')
 
 @section('content')
     <div class="flex flex-col">
         <div class="block">
-            <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Update user</h2>
-            <x-buttons.back :backUrl="'users.index'">Back</x-buttons.back>
+            <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Add new post</h2>
+            <x-buttons.back :backUrl="'posts.index'">Back</x-buttons.back>
         </div>
     </div>
 
@@ -20,22 +20,25 @@
         </div>
     @endif
 
-    <form action="{{ route('users.update', $user->id) }}" method="POST"  class="mt-4" novalidate>
+    <form action="{{ route('posts.store') }}" method="POST" class="mt-4" novalidate>
         @csrf
-        @method('PUT')
-
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <div class="col-span-2">
-                <x-input-label for="name" :value="__('Name')" />
-                <x-text-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name',$user->name)"
+                <x-input-label for="title" :value="__('Title')" />
+                <x-text-input id="title" class="block w-full mt-1" type="text" name="title" :value="old('title')"
                     required autofocus />
-                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                <x-input-error :messages="$errors->get('title')" class="mt-2" />
             </div>
             <div class="col-span-2">
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email',$users->email)"
+                <x-input-label for="description" :value="__('Description')" />
+                <x-text-input id="description" class="block w-full mt-1" type="text" name="description" :value="old('description')"
                     required />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <x-input-error :messages="$errors->get('description')" class="mt-2" />
+            </div>
+            <div class="col-span-full">
+                <x-input-label for="body" :value="__('Body')" />
+                <x-forms.tinymce-editor required name="body" id="body">{{ old('body') }}</x-forms.tinymce-editor>
+                <x-input-error :messages="$errors->get('body')" class="mt-2" />
             </div>
         </div>
         <div class="mt-4 text-center">

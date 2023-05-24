@@ -1,19 +1,19 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Buttons;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ClientLayout extends Component
+class Back extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(public string $backUrl)
     {
-        //
+        $this->backUrl=$backUrl;
     }
 
     /**
@@ -21,6 +21,6 @@ class ClientLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.client');
+        return view('components.buttons.back');
     }
 }

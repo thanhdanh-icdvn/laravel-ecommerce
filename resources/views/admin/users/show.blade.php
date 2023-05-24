@@ -2,14 +2,10 @@
 @section('title', 'Chi tiết người dùng')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show User</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
-            </div>
+    <div class="flex flex-col">
+        <div class="block">
+            <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">User detail</h2>
+            <x-buttons.back :backUrl="'users.index'">Back</x-buttons.back>
         </div>
     </div>
 

@@ -13,7 +13,8 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.12",
         "socialiteproviders/zalo": "^5.0",
-        "spatie/laravel-medialibrary": "^10.9"
+        "spatie/laravel-medialibrary": "^10.9",
+        "tinymce/tinymce": "^6.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8",

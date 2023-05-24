@@ -1,13 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\SocialController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
-use App\Http\Livewire\Admin\OrderList;
-use App\Http\Livewire\Admin\OrderManager;
-use App\Http\Livewire\Admin\ProductCreator;
-use App\Http\Livewire\Admin\ProductList;
-use App\Http\Livewire\Admin\ProductManager;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -28,16 +24,12 @@ Route::get('/', function () {
 // All route with prefix /admin
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {return view('dashboard');})->middleware(['auth'])->name('admin');
-    Route::resource('users', UserController::class);
     Route::middleware('auth')->group(function () {
+        Route::resource('users', UserController::class);
+        Route::resource('posts', PostController::class);
         Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-        Route::get('products', ProductList::class)->name('products.index');
-        Route::get('products/create', ProductCreator::class)->name('products.create');
-        Route::get('products/{product}', ProductManager::class)->name('products.edit');
-        Route::get('orders', OrderList::class)->name('orders.index');
-        Route::get('orders/{order}', OrderManager::class)->name('orders.show');
     });
 });
 

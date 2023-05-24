@@ -1,14 +1,14 @@
 @extends('layouts.admin')
-@section('title', 'Danh sách người dùng')
+@section('title', 'Danh sách bài viết')
 
 @section('content')
     <div class="content__head">
         <div class="flex items-center justify-between transition-all duration-300">
-            <h2 class="inline-block mt-0 mb-2 text-4xl font-medium leading-tight text-primary">User list</h2>
+            <h2 class="inline-block mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Post list</h2>
             <div class="block">
-                <a href="{{ route('users.create') }}" role="button"
+                <a href="{{ route('posts.create') }}" role="button"
                     class="px-4 py-2 ml-auto font-bold text-white bg-blue-500 rounded-full inline-bock hover:bg-blue-700">Add
-                    new User</a>
+                    new post</a>
             </div>
         </div>
         <div class="block w-full mx-auto mt-4 text-center lg:w-1/2">
@@ -24,33 +24,41 @@
     <div class="flex flex-col w-full overflow-x-auto">
         <table class="min-w-full text-sm font-light border dark:border-neutral-300">
             <thead class="font-medium border-b dark:border-neutral-300 bg-slate-200">
-                <tr>
+                <tr class="">
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">No</th>
-                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Name</th>
-                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Email</th>
+                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Title</th>
+                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Description</th>
+                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Body</th>
+                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Author</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Created At</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Updated At</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $user)
-                    <tr class="border-b dark:border-neutral-300">
+                @foreach ($posts as $post)
+                    <tr class="border-b dark:border-neutral-300 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <td class="px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-300">
                             {{ ++$i }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            {{ $user->name }}</td>
+                            {{ $post->title }}
+                        </td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            {{ $user->email }}</td>
+                            {{ $post->description }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            {{ $user->created_at->format('m-d-Y H:i:s') }}</td>
+                            {!! $post->body !!}
+                        </td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            {{ $user->updated_at->format('m-d-Y H:i:s') }}</td>
+                            {{ $post->user_id }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                            {{ $post->created_at->format('m-d-Y H:i:s') }}</td>
+                        <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
+                            {{ $post->updated_at->format('m-d-Y H:i:s') }}</td>
+                        <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                 <ul class="flex flex-row justify-center w-full space-x-4">
-                                    <li><a class="text-info" href="{{ route('users.show', $user->id) }}">Show</a></li>
-                                    <li><a class="text-primary" href="{{ route('users.edit', $user->id) }}">Edit</a></li>
+                                    <li><a class="text-info" href="{{ route('posts.show', $post->id) }}">Show</a></li>
+                                    <li><a class="text-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a></li>
                                     <li>
                                         @csrf
                                         @method('DELETE')
@@ -66,6 +74,6 @@
     </div>
 
     <div class="block mt-4">
-        {{ $users->links() }}
+        {{ $posts->links() }}
     </div>
 @endsection

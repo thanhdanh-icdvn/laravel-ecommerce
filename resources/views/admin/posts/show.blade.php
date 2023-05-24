@@ -1,0 +1,1 @@
+{{-- resources/views/admin/posts/show.blade.php --}}
