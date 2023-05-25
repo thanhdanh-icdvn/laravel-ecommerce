@@ -1,6 +1,4 @@
-@extends('layouts.front')
-@section('title', 'Trang chủ')
-
-@section('content')
+<x-front-layout>
+    <x-slot name="title">{{__('Trang chủ')}}</x-slot>
     <p>This is my body content.</p>
-@endsection
+</x-front-layout>

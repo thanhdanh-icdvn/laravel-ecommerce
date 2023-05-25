@@ -8,7 +8,7 @@
         </div>
         <ul class="space-y-2 font-medium sidebar__content">
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                <a href="{{route('admin')}}" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
                     :active="request() - > routeIs('admin')">
                     <svg aria-hidden="true"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"

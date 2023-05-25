@@ -1,11 +1,10 @@
-@extends('layouts.admin')
-@section('title', 'Cập nhật bài viết')
+<x-admin-layout>
+    <x-slot name="title">{{__('Cập nhật bài viết')}}</x-slot>
 
-@section('content')
     <div class="flex flex-col">
         <div class="block">
             <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Update post</h2>
-            <x-buttons.back :backUrl="'posts.index'">Back</x-buttons.back>
+            <x-buttons.back backUrl="{{route('posts.index')}}">Back</x-buttons.back>
         </div>
     </div>
 
@@ -27,19 +26,20 @@
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <div class="col-span-2">
                 <x-input-label for="title" :value="__('Title')" />
-                <x-text-input id="title" class="block w-full mt-1" type="text" name="title" :value="old('title',$post->title)"
+                <x-text-input id="title" class="block w-full mt-1" type="text" name="title" :value="old('title', $post->title)"
                     required autofocus />
                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
             </div>
             <div class="col-span-2">
                 <x-input-label for="description" :value="__('Description')" />
-                <x-text-input id="description" class="block w-full mt-1" type="text" name="description" :value="old('description',$post->description)"
-                    required />
+                <x-text-input id="description" class="block w-full mt-1" type="text" name="description"
+                    :value="old('description', $post->description)" required />
                 <x-input-error :messages="$errors->get('description')" class="mt-2" />
             </div>
             <div class="col-span-full">
                 <x-input-label for="body" :value="__('Body')" />
-                <x-forms.tinymce-editor required name="body" id="body">{{ old('body',$post->body) }}</x-forms.tinymce-editor>
+                <x-forms.tinymce-editor required name="body" id="body">{{ old('body', $post->body) }}
+                </x-forms.tinymce-editor>
                 <x-input-error :messages="$errors->get('body')" class="mt-2" />
             </div>
         </div>
@@ -48,4 +48,4 @@
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
         </div>
     </form>
-@endsection
+</x-admin-layout>

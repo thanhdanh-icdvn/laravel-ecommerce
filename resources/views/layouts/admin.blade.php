@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
+    <title>
+        @if (isset($title))
+            {{$title}} | {{ config('app.name', 'Laravel') }}
+        @else
+            {{ config('app.name', 'Laravel') }}
+        @endif
+    </title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -21,6 +27,7 @@
     @include('layouts.includes.admin.sidebar')
     <div class="flex flex-col flex-grow w-full min-h-screen pl-0 ml-auto bg-gray-100 lg:pl-64 sm:pl-16">
         <!-- Navigation -->
+
         @include('layouts.navigation')
         <!-- Page Heading -->
         @if (isset($header))
@@ -31,13 +38,14 @@
             </header>
         @endif
 
+
         <!-- Page Content -->
         <main class="main">
             <div class="py-4">
                 <div class="px-4 sm:px-6 md:px-8">
                     <div class="overflow-hidden bg-white rounded-lg shadow-sm">
                         <div class="p-6 text-gray-900">
-                           @yield('content')
+                            {{$slot}}
                         </div>
                     </div>
                 </div>

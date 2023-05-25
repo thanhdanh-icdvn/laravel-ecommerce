@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -14,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         $paginateNumber = 10;
-        $posts = Post::search()->with('authors')->paginate($paginateNumber);
+        $posts = Post::search(request()->search)->with('authors')->paginate($paginateNumber);
         return view('admin.posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * $paginateNumber);
     }

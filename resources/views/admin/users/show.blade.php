@@ -1,11 +1,9 @@
-@extends('layouts.admin')
-@section('title', 'Chi tiết người dùng')
-
-@section('content')
+<x-admin-layout>
+    <x-slot name="title">{{__('Chi tiết người dùng')}}</x-slot>
     <div class="flex flex-col">
         <div class="block">
             <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">User detail</h2>
-            <x-buttons.back :backUrl="'users.index'">Back</x-buttons.back>
+            <x-buttons.back backUrl="{{route('users.index')}}">Back</x-buttons.back>
         </div>
     </div>
 
@@ -23,4 +21,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-admin-layout>

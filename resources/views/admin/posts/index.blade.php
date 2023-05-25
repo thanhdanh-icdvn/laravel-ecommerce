@@ -1,9 +1,7 @@
-@extends('layouts.admin')
-@section('title', 'Danh sách bài viết')
-
-@section('content')
+<x-admin-layout>
+    <x-slot name="title">{{ __('Danh sách bài viết') }}</x-slot>
     <div class="content__head">
-        <div class="flex items-center justify-between transition-all duration-300">
+        <div class="flex flex-wrap items-center justify-between transition-all duration-300">
             <h2 class="inline-block mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Post list</h2>
             <div class="block">
                 <a href="{{ route('posts.create') }}" role="button"
@@ -28,6 +26,7 @@
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">No</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Title</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Description</th>
+                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Slug</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Body</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Author</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Created At</th>
@@ -38,13 +37,16 @@
             <tbody>
                 @foreach ($posts as $post)
                     <tr class="border-b dark:border-neutral-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <td class="px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-300">
+                        <td
+                            class="px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-300">
                             {{ ++$i }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $post->title }}
                         </td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $post->description }}</td>
+                        <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
+                            {{ $post->slug }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {!! $post->body !!}
                         </td>
@@ -58,7 +60,8 @@
                             <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                 <ul class="flex flex-row justify-center w-full space-x-4">
                                     <li><a class="text-info" href="{{ route('posts.show', $post->id) }}">Show</a></li>
-                                    <li><a class="text-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a></li>
+                                    <li><a class="text-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                                    </li>
                                     <li>
                                         @csrf
                                         @method('DELETE')
@@ -76,4 +79,4 @@
     <div class="block mt-4">
         {{ $posts->links() }}
     </div>
-@endsection
+</x-admin-layout>

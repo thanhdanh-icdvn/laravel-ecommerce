@@ -21,6 +21,6 @@ class Back extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.buttons.back');
+        return view('components.buttons.back',['attributes','backUrl','slot']);
     }
 }

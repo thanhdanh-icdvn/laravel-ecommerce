@@ -1,9 +1,8 @@
-@extends('layouts.admin')
-@section('title', 'Danh sách người dùng')
+<x-admin-layout>
+    <x-slot name="title">{{__('Danh sách người dùng')}}</x-slot>
 
-@section('content')
     <div class="content__head">
-        <div class="flex items-center justify-between transition-all duration-300">
+        <div class="flex flex-wrap items-center justify-between transition-all duration-300">
             <h2 class="inline-block mt-0 mb-2 text-4xl font-medium leading-tight text-primary">User list</h2>
             <div class="block">
                 <a href="{{ route('users.create') }}" role="button"
@@ -36,7 +35,8 @@
             <tbody>
                 @foreach ($users as $user)
                     <tr class="border-b dark:border-neutral-300">
-                        <td class="px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-300">
+                        <td
+                            class="px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-300">
                             {{ ++$i }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $user->name }}</td>
@@ -50,7 +50,8 @@
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                                 <ul class="flex flex-row justify-center w-full space-x-4">
                                     <li><a class="text-info" href="{{ route('users.show', $user->id) }}">Show</a></li>
-                                    <li><a class="text-primary" href="{{ route('users.edit', $user->id) }}">Edit</a></li>
+                                    <li><a class="text-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
+                                    </li>
                                     <li>
                                         @csrf
                                         @method('DELETE')
@@ -68,4 +69,4 @@
     <div class="block mt-4">
         {{ $users->links() }}
     </div>
-@endsection
+</x-admin-layout>

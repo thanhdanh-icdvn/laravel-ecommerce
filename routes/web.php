@@ -23,7 +23,11 @@ Route::get('/', function () {
 });
 // All route with prefix /admin
 Route::prefix('admin')->group(function () {
-    Route::get('/', function () {return view('dashboard');})->middleware(['auth'])->name('admin');
+    Route::get('/', function () {
+        return view('dashboard');
+    })
+        ->middleware(['auth', 'verified'])
+        ->name('admin');
     Route::middleware('auth')->group(function () {
         Route::resource('users', UserController::class);
         Route::resource('posts', PostController::class);

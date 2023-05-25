@@ -1,11 +1,10 @@
-@extends('layouts.admin')
-@section('title', 'Thêm người dùng')
+<x-admin-layout>
+    <x-slot name="title">{{__('Thêm người dùng')}}</x-slot>
 
-@section('content')
     <div class="flex flex-col">
         <div class="block">
             <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Add new user</h2>
-            <x-buttons.back :backUrl="'users.index'">Back</x-buttons.back>
+            <x-buttons.back backUrl="{{route('users.index')}}">Back</x-buttons.back>
         </div>
     </div>
 
@@ -71,4 +70,4 @@
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
         </div>
     </form>
-@endsection
+</x-admin-layout>

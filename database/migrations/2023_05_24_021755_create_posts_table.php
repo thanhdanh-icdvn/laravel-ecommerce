@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\User::class,'user_id')->constrained()->cascadeOnDelete();
-            $table->string('title',255);
-            $table->string('description');
-            $table->text('body');
+            $table->string('title',100);
+            $table->text('description');
+            $table->string('slug');
+            $table->longText('body');
             $table->timestamps();
         });
     }

@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-use App\Permissions\HasPermissionsTrait;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -50,16 +49,22 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $appends = [];
 
-    public function scopeSearch($query){
+    /**
+     * Scope a query to search for a term in the attributes
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSearch(Builder $query){
         $searchTerm = request()->search;
         if(!empty($searchTerm)){
-            $query = $query->where('name','LIKE','%'.$searchTerm.'%')
-            ->orWhere('email','LIKE','%'.$searchTerm.'%');
+            $query = $query->whereLike(['name','email'],$searchTerm);
         }
         return $query;
     }
 
-    public function posts(){
+    public function posts()
+    {
         return $this->hasMany(\App\Models\Post::class);
     }
 }
