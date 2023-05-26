@@ -10,17 +10,17 @@ class Post extends Model
 {
     use HasFactory;
     protected $table = 'posts';
-
     protected $fillable = [
         'user_id',
         'title',
         'description',
-        'body'
+        'body',
+        'featured_image'
     ];
 
-    public function authors(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class,'user_id','id');
     }
 
     /**

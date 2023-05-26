@@ -27,6 +27,7 @@
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Title</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Description</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Slug</th>
+                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Thumbnail</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Body</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Author</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Created At</th>
@@ -48,10 +49,13 @@
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $post->slug }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
+                            <img src="{{ asset('storage/images/post_images/'.$post->featured_image) }}">
+                        </td>
+                        <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {!! $post->body !!}
                         </td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            {{ $post->user_id }}</td>
+                            {{ $post->author->name }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $post->created_at->format('m-d-Y H:i:s') }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">

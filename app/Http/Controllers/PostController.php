@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -13,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $paginateNumber = 10;
-        $posts = Post::search(request()->search)->with('authors')->paginate($paginateNumber);
+        $posts = Post::with('author')->search()->paginate($paginateNumber);
         return view('admin.posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * $paginateNumber);
     }
@@ -31,10 +33,39 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        Post::create(array_merge($request->only('title', 'description', 'body'), [
-            'user_id' => auth()->id()
-        ]));
+        if ($request->hasFile('featured_image')) {
+            $path = 'images/post_images/';
+            $file = $request->file('featured_image');
+            $filename = $file->getClientOriginalName();
+            $new_filename = time() . '_' . $filename;
+            $upload = Storage::disk('public')->put($path . $new_filename, (string) file_get_contents($file));
+            $post_thumbnails_path = $path . 'thumbnails';
+            if (!Storage::disk('public')->exists($post_thumbnails_path)) {
+                Storage::disk('public')->makeDirectory($post_thumbnails_path);
+            }
 
+            // Create square thumbnail
+
+            Image::make(storage_path('app/public/' . $path . $new_filename))
+                ->fit(200, 200)
+                ->save(storage_path('app/public/' . $path . 'thumbnails/' . 'thumb_' . $new_filename));
+
+            // Create resized image
+            Image::make(storage_path('app/public/' . $path . $new_filename))
+                ->fit(500, 350)
+                ->save(storage_path('app/public/' . $path . 'thumbnails/' . 'resized_' . $new_filename));
+
+            if ($upload) {
+                Post::create(array_merge($request->only('title', 'description', 'body'), [
+                    'user_id' => auth()->id(),
+                    'featured_image' => $new_filename
+                ]));
+            }
+        }else{
+            Post::create(array_merge($request->only('title', 'description', 'body'), [
+                'user_id' => auth()->id()
+            ]));
+        }
         return redirect()->route('posts.index')
             ->withSuccess(__('Post created successfully.'));
     }

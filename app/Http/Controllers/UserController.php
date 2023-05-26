@@ -14,8 +14,7 @@ class UserController extends Controller
     public function index()
     {
         $paginateNumber = 10;
-        $users = User::search(request()->search)->paginate($paginateNumber);
-        // dd($user);
+        $users = User::search()->paginate($paginateNumber);
         return view('admin.users.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $paginateNumber);
     }
