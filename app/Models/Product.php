@@ -9,9 +9,9 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function categories(): \Illuminate\Database\Eloquent\Relations\hasMany
     {
-        return $this->belongsToMany(Category::class);
+        return $this->hasMany(Category::class);
     }
     public function skus(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
