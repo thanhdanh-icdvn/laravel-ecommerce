@@ -6,8 +6,8 @@
         </h2>
     </x-slot>
     <div class="grid items-end gap-6 md:grid-cols-3">
-        <x-inputs.floating label="Label"></x-inputs.floating>
-        <x-inputs.floating label="Label" type="filled"></x-inputs.floating>
-        <x-inputs.floating label="Label" type="outlined"></x-inputs.floating>
+        <x-inputs.floating label="Label" />
+        <x-inputs.floating label="Label" type="filled" />
+        <x-inputs.floating label="Label" type="outlined" />
     </div>
 </x-admin-layout>

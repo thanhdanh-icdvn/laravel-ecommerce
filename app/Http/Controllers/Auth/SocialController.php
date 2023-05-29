@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\SocialAccount;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 use Illuminate\Auth\Events\Registered as RegisteredEvent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
-use Str;
+use Illuminate\Support\Str;
 
 class SocialController extends Controller
 {
@@ -122,6 +121,6 @@ class SocialController extends Controller
      */
     protected function redirectTo()
     {
-        return route('admin');
+        return route('admin.dashboard');
     }
 }

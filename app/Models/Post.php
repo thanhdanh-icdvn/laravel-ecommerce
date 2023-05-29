@@ -18,12 +18,7 @@ class Post extends Model
         'featured_image'
     ];
 
-    public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(User::class,'user_id','id');
-    }
-
-    /**
+        /**
      * Scope a query to search for a term in the attributes
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -36,5 +31,15 @@ class Post extends Model
             $query = $query->whereLike(['title', 'description', 'slug', 'created_at', 'updated_at'], $searchTerm);
         }
         return $query;
+    }
+
+    public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
+
+    public function tags():\Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class)->as('tags');
     }
 }

@@ -4,7 +4,7 @@
     <div class="flex flex-col">
         <div class="block">
             <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Update user</h2>
-            <x-buttons.back backUrl="{{route('users.index')}}">Back</x-buttons.back>
+            <x-buttons.back backUrl="{{route('admin.users.index')}}">Back</x-buttons.back>
         </div>
     </div>
 
@@ -19,7 +19,7 @@
         </div>
     @endif
 
-    <form action="{{ route('users.update', $user->id) }}" method="POST" class="mt-4" novalidate>
+    <form action="{{ route('admin.users.update', $user->id) }}" method="POST" class="mt-4" novalidate>
         @csrf
         @method('PUT')
 

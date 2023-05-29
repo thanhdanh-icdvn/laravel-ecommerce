@@ -5,7 +5,7 @@
         <div class="flex flex-wrap items-center justify-between transition-all duration-300">
             <h2 class="inline-block mt-0 mb-2 text-4xl font-medium leading-tight text-primary">User list</h2>
             <div class="block">
-                <a href="{{ route('users.create') }}" role="button"
+                <a href="{{ route('admin.users.create') }}" role="button"
                     class="px-4 py-2 ml-auto font-bold text-white bg-blue-500 rounded-full inline-bock hover:bg-blue-700">Add
                     new User</a>
             </div>

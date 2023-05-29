@@ -3,7 +3,7 @@
     <div class="flex flex-col">
         <div class="block">
             <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">User detail</h2>
-            <x-buttons.back backUrl="{{route('users.index')}}">Back</x-buttons.back>
+            <x-buttons.back backUrl="{{route('admin.users.index')}}">Back</x-buttons.back>
         </div>
     </div>
 

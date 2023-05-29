@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\Post\PostStoreRequest;
+use App\Http\Requests\Post\PostUpdateRequest;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -15,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $paginateNumber = 10;
-        $posts = Post::with('author')->search()->paginate($paginateNumber);
+        $posts = Post::with('author')->with(['tags'])->search()->paginate($paginateNumber);
         return view('admin.posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * $paginateNumber);
     }
@@ -31,8 +32,9 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PostRequest $request)
+    public function store(PostStoreRequest $request)
     {
+        $post = null;
         if ($request->hasFile('featured_image')) {
             $path = 'images/post_images/';
             $file = $request->file('featured_image');
@@ -56,17 +58,20 @@ class PostController extends Controller
                 ->save(storage_path('app/public/' . $path . 'thumbnails/' . 'resized_' . $new_filename));
 
             if ($upload) {
-                Post::create(array_merge($request->only('title', 'description', 'body'), [
+                $post = Post::create(array_merge($request->only('title', 'description', 'body'), [
                     'user_id' => auth()->id(),
                     'featured_image' => $new_filename
                 ]));
             }
         }else{
-            Post::create(array_merge($request->only('title', 'description', 'body'), [
+            $post = Post::create(array_merge($request->only('title', 'description', 'body'), [
                 'user_id' => auth()->id()
             ]));
         }
-        return redirect()->route('posts.index')
+        if($request->has('tags')){
+            $post->tags()->attach($request->tags);
+        }
+        return redirect()->route('admin.posts.index')
             ->withSuccess(__('Post created successfully.'));
     }
 
@@ -93,11 +98,11 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PostRequest $request, Post $post)
+    public function update(PostUpdateRequest $request, Post $post)
     {
         $post->update($request->only('title', 'description', 'body'));
 
-        return redirect()->route('posts.index')
+        return redirect()->route('admin.posts.index')
             ->withSuccess(__('Post updated successfully.'));
     }
 

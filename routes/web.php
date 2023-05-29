@@ -6,6 +6,7 @@ use App\Http\Controllers\PostTaskController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,12 +24,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 // All route with prefix /admin
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     })
         ->middleware(['auth', 'verified'])
-        ->name('admin');
+        ->name('dashboard');
     Route::middleware('auth')->group(function () {
         Route::resource('users', UserController::class);
         Route::resource('posts', PostController::class);

@@ -4,7 +4,7 @@
         <div class="flex flex-wrap items-center justify-between transition-all duration-300">
             <h2 class="inline-block mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Post list</h2>
             <div class="block">
-                <a href="{{ route('posts.create') }}" role="button"
+                <a href="{{ route('admin.posts.create') }}" role="button"
                     class="px-4 py-2 ml-auto font-bold text-white bg-blue-500 rounded-full inline-bock hover:bg-blue-700">Add
                     new post</a>
             </div>
@@ -48,8 +48,12 @@
                             {{ $post->description }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $post->slug }}</td>
-                        <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            <img src="{{ asset('storage/images/post_images/'.$post->featured_image) }}">
+                        <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300 block text-center">
+                           @if (is_null($post->featured_image))
+                            <p>No featured image</p>
+                           @else
+                            <img src="{{ asset('storage/images/post_images/'.$post->featured_image) }}" class="mx-auto w-full max-w-[200px]">
+                           @endif
                         </td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {!! $post->body !!}
@@ -61,10 +65,10 @@
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $post->updated_at->format('m-d-Y H:i:s') }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                                 <ul class="flex flex-row justify-center w-full space-x-4">
-                                    <li><a class="text-info" href="{{ route('posts.show', $post->id) }}">Show</a></li>
-                                    <li><a class="text-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                                    <li><a class="text-info" href="{{ route('admin.posts.show', $post->id) }}">Show</a></li>
+                                    <li><a class="text-primary" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
                                     </li>
                                     <li>
                                         @csrf

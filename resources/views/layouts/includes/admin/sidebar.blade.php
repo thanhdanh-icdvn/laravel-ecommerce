@@ -8,8 +8,8 @@
         </div>
         <ul class="space-y-2 font-medium sidebar__content">
             <li>
-                <a href="{{route('admin')}}" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
-                    :active="request() - > routeIs('admin')">
+                <a href="{{route('admin.dashboard')}}" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                    :active="request() - > routeIs('admin.dashboard')">
                     <svg aria-hidden="true"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -76,17 +76,17 @@
                 </button>
                 <ul x-show="expanded" x-collapse.duration.500ms>
                     <li>
-                        <a href="{{ route('posts.index') }}"
+                        <a href="{{ route('admin.posts.index') }}"
                             class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 pl-11">List</a>
                     </li>
                     <li>
-                        <a href="{{ route('posts.create') }}"
+                        <a href="{{ route('admin.posts.create') }}"
                             class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 pl-11">Create</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="{{ route('users.index') }}"
+                <a href="{{ route('admin.users.index') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"

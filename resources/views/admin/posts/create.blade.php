@@ -24,7 +24,7 @@
     <div class="flex flex-col">
         <div class="block">
             <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">Add new post</h2>
-            <x-buttons.back backUrl="{{ route('posts.index') }}">Back</x-buttons.back>
+            <x-buttons.back backUrl="{{ route('admin.posts.index') }}">Back</x-buttons.back>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
         </div>
     @endif
 
-    <form action="{{ route('posts.store') }}" method="POST" class="mt-4" novalidate enctype="multipart/form-data">
+    <form action="{{ route('admin.posts.store') }}" method="POST" class="mt-4" novalidate enctype="multipart/form-data">
         @csrf
         <div class="flex flex-col">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

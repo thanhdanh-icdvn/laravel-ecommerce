@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Post;
 
-use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class PostStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return Auth::check();
+        return true;
     }
 
     /**
@@ -26,7 +25,7 @@ class PostRequest extends FormRequest
             'title' => ['required'],
             'description' => ['required'],
             'body' => ['required'],
-            'featured_image' =>['required','mimes:png,jpg,jpeg','max:2048']
+            'featured_image' =>['nullable','mimes:png,jpg,jpeg','max:2048']
         ];
     }
 
