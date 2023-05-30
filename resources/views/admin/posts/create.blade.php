@@ -42,7 +42,7 @@
     <form action="{{ route('admin.posts.store') }}" method="POST" class="mt-4" novalidate enctype="multipart/form-data">
         @csrf
         <div class="flex flex-col">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <div class="col-span-3 space-y-4">
                     <div class="block space-y-1">
                         <x-input-label for="title" :value="__('Title')" />
@@ -63,9 +63,9 @@
                         <x-input-error :messages="$errors->get('body')" class="mt-2" />
                     </div>
                 </div>
-                <div class="col-span-auto space-y-4">
+                <div class="space-y-4 col-span-auto">
                     <div class="block">
-                        <x-input-label for="body" :value="__('Post category')" />
+                        <x-input-label for="body" :value="__('Category')" />
                         <select id="default"
                             class="bg-gray-50 border border-gray-300 text-gray-900 mb-2 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Choose a category</option>
@@ -80,8 +80,8 @@
                             :value="old('featured_image')" required accept="image/png ,image/jpeg , image/jpg" :error="$errors->get('featured_image')"/>
                         <x-input-error :messages="$errors->get('featured_image')" class="mt-2" />
                     </div>
-                    <div class="flex flex-col justify-center items-center">
-                        <img src="" class="img-thumbnail aspect-square max-w-xs" id="featured_image-previewer">
+                    <div class="flex flex-col items-center justify-center">
+                        <img src="" class="max-w-xs img-thumbnail aspect-square" id="featured_image-previewer">
                     </div>
                 </div>
             </div>

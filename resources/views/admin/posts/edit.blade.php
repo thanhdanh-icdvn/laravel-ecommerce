@@ -43,28 +43,28 @@
         @csrf
         @method('PUT')
         <div class="flex flex-col">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <div class="col-span-3 space-y-4">
                     <div class="block space-y-1">
                         <x-input-label for="title" :value="__('Title')" />
                         <x-text-input id="title" class="block w-full mt-1" type="text" name="title"
-                            :value="old('title')" required autofocus/>
+                            :value="old('title', $post->title)" required autofocus/>
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
                     </div>
                     <div class="block space-y-1">
                         <x-input-label for="description" :value="__('Description')" />
                         <x-text-input id="description" class="block w-full mt-1" type="text" name="description"
-                            :value="old('description')" required/>
+                            :value="old('description',$post->description)" required/>
                         <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
                     <div class="block space-y-1">
                         <x-input-label for="body" :value="__('Body')" />
-                        <x-forms.tinymce-editor required name="body" id="body" :error="$errors->get('body')">{{ old('body') }}
+                        <x-forms.tinymce-editor required name="body" id="body" :error="$errors->get('body')">{{ old('body',$post->body) }}
                         </x-forms.tinymce-editor>
                         <x-input-error :messages="$errors->get('body')" class="mt-2" />
                     </div>
                 </div>
-                <div class="col-span-auto space-y-4">
+                <div class="space-y-4 col-span-auto">
                     <div class="block">
                         <x-input-label for="body" :value="__('Post category')" />
                         <select id="default"
@@ -81,8 +81,8 @@
                             :value="old('featured_image')" required accept="image/png ,image/jpeg , image/jpg" :error="$errors->get('featured_image')"/>
                         <x-input-error :messages="$errors->get('featured_image')" class="mt-2" />
                     </div>
-                    <div class="flex flex-col justify-center items-center">
-                        <img src="" class="img-thumbnail aspect-square max-w-xs" id="featured_image-previewer">
+                    <div class="flex flex-col items-center justify-center">
+                        <img src="" class="max-w-xs img-thumbnail aspect-square" id="featured_image-previewer">
                     </div>
                 </div>
             </div>

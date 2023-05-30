@@ -27,7 +27,7 @@
     <main>
         {{ $slot }}
     </main>
+    @stack('scripts')
 </body>
 @include('layouts.includes.client.footer')
-
 </html>

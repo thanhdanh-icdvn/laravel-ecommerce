@@ -8,7 +8,7 @@
 
     <title>
         @if (isset($title))
-            {{$title}} | {{ config('app.name', 'Laravel') }}
+            {{ $title }} | {{ config('app.name', 'Laravel') }}
         @else
             {{ config('app.name', 'Laravel') }}
         @endif
@@ -18,7 +18,6 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <x-head.tinymce-config />
-    <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -45,13 +44,14 @@
                 <div class="px-4 sm:px-6 md:px-8">
                     <div class="overflow-hidden bg-white rounded-lg shadow-sm">
                         <div class="p-6 text-gray-900">
-                            {{$slot}}
+                            {{ $slot }}
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
+    @stack('scripts')
 </body>
 
 </html>

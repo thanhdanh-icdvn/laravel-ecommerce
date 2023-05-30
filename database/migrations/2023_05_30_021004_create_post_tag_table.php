@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category_posts', function (Blueprint $table) {
+        Schema::create('post_tag', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->text('description')->nullable();
+            $table->foreignIdFor(\App\Models\Post::class,'post_id')->nullable()->default(null)->constrained()->nullOnDelete();
+            $table->foreignIdFor(\App\Models\Tag::class,'tag_id')->nullable()->default(null)->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category_posts');
+        Schema::dropIfExists('post_tags');
     }
 };
