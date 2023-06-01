@@ -22,7 +22,7 @@ class PostStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'unique:posts,title'],
+            'name' => ['required', 'unique:posts,name'],
             'description' => ['required'],
             'body' => ['required'],
             'featured_image' => ['nullable', 'mimes:png,jpg,jpeg', 'max:2048'],

@@ -19,7 +19,7 @@
     ],
 ])
 <x-admin-layout>
-    <x-slot name="title">{{ __('Thêm bài viết') }}</x-slot>
+    <x-slot name="title">{{ __('Cập nhật bài viết') }}</x-slot>
 
     <div class="flex flex-col">
         <div class="block">
@@ -39,27 +39,29 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.posts.update',$post->id) }}" method="POST" class="mt-4" novalidate enctype="multipart/form-data">
+    <form action="{{ route('admin.posts.update', $post->id) }}" method="POST" class="mt-4" novalidate
+        enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="flex flex-col">
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <div class="col-span-3 space-y-4">
                     <div class="block space-y-1">
-                        <x-input-label for="title" :value="__('Title')" />
-                        <x-text-input id="title" class="block w-full mt-1" type="text" name="title"
-                            :value="old('title', $post->title)" required autofocus/>
-                        <x-input-error :messages="$errors->get('title')" class="mt-2" />
+                        <x-input-label for="name" :value="__('Name')" />
+                        <x-text-input id="name" class="block w-full mt-1" type="text" name="name"
+                            :value="old('name', $post->name)" required autofocus />
+                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
                     <div class="block space-y-1">
                         <x-input-label for="description" :value="__('Description')" />
                         <x-text-input id="description" class="block w-full mt-1" type="text" name="description"
-                            :value="old('description',$post->description)" required/>
+                            :value="old('description', $post->description)" required />
                         <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
                     <div class="block space-y-1">
                         <x-input-label for="body" :value="__('Body')" />
-                        <x-forms.tinymce-editor required name="body" id="body" :error="$errors->get('body')">{{ old('body',$post->body) }}
+                        <x-forms.tinymce-editor required name="body" id="body" :error="$errors->get('body')">
+                            {{ old('body', $post->body) }}
                         </x-forms.tinymce-editor>
                         <x-input-error :messages="$errors->get('body')" class="mt-2" />
                     </div>
@@ -78,7 +80,7 @@
                     <div class="block">
                         <x-input-label for="featured_image" :value="__('Featured Image')" />
                         <x-text-input id="featured_image" class="block w-full mt-1" type="file" name="featured_image"
-                            :value="old('featured_image')" required accept="image/png ,image/jpeg , image/jpg" :error="$errors->get('featured_image')"/>
+                            :value="old('featured_image')" required accept="image/png ,image/jpeg , image/jpg" :error="$errors->get('featured_image')" />
                         <x-input-error :messages="$errors->get('featured_image')" class="mt-2" />
                     </div>
                     <div class="flex flex-col items-center justify-center">
