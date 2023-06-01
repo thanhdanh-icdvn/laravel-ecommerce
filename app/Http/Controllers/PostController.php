@@ -40,23 +40,23 @@ class PostController extends Controller
             $path = 'images/post_images/';
             $file = $request->file('featured_image');
             $filename = $file->getClientOriginalName();
-            $new_filename = time() . '_' . $filename;
-            $upload = Storage::disk('public')->put($path . $new_filename, (string) file_get_contents($file));
-            $post_thumbnails_path = $path . 'thumbnails';
-            if (!Storage::disk('public')->exists($post_thumbnails_path)) {
+            $new_filename = time().'_'.$filename;
+            $upload = Storage::disk('public')->put($path.$new_filename, (string) file_get_contents($file));
+            $post_thumbnails_path = $path.'thumbnails';
+            if (! Storage::disk('public')->exists($post_thumbnails_path)) {
                 Storage::disk('public')->makeDirectory($post_thumbnails_path);
             }
 
             // Create square thumbnail
 
-            Image::make(storage_path('app/public/' . $path . $new_filename))
+            Image::make(storage_path('app/public/'.$path.$new_filename))
                 ->fit(200, 200)
-                ->save(storage_path('app/public/' . $path . 'thumbnails/' . 'thumb_' . $new_filename));
+                ->save(storage_path('app/public/'.$path.'thumbnails/'.'thumb_'.$new_filename));
 
             // Create resized image
-            Image::make(storage_path('app/public/' . $path . $new_filename))
+            Image::make(storage_path('app/public/'.$path.$new_filename))
                 ->fit(500, 350)
-                ->save(storage_path('app/public/' . $path . 'thumbnails/' . 'resized_' . $new_filename));
+                ->save(storage_path('app/public/'.$path.'thumbnails/'.'resized_'.$new_filename));
 
             if ($upload) {
                 $post = Post::create(array_merge($request->only('name', 'description', 'body'), [
