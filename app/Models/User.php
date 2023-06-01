@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'google_id'
+        'google_id',
     ];
 
     /**
@@ -42,6 +42,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     /**
      * The accessors to append to the model's array form.
      *
@@ -52,14 +53,15 @@ class User extends Authenticatable
     /**
      * Scope a query to search for a term in the attributes
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeSearch(Builder $query){
+    public function scopeSearch(Builder $query)
+    {
         $searchTerm = request()->search;
-        if(!empty($searchTerm)){
-            $query = $query->whereLike(['name','email'],$searchTerm);
+        if (! empty($searchTerm)) {
+            $query = $query->whereLike(['name', 'email'], $searchTerm);
         }
+
         return $query;
     }
 

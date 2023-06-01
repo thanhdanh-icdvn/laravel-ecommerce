@@ -15,6 +15,7 @@ class UserController extends Controller
     {
         $paginateNumber = 10;
         $users = User::search()->paginate($paginateNumber);
+
         return view('admin.users.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $paginateNumber);
     }
@@ -35,7 +36,7 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|string|unique:users,email',
-            'password' =>'required'
+            'password' => 'required',
         ]);
         $validated['password'] = Hash::make($validated['password']);
 
@@ -72,6 +73,7 @@ class UserController extends Controller
         ]);
 
         $user->update($request->all());
+
         return redirect()->route('admin.users.index')
             ->with('success', 'User updated successfully');
     }
@@ -82,6 +84,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+
         return redirect()->route('admin.users.index')
             ->with('success', 'User deleted successfully');
     }

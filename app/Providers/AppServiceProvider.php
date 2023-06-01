@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Paginator::useTailwind();
-        $this->app->resolving(LengthAwarePaginator::class,function($paginator){
+        $this->app->resolving(LengthAwarePaginator::class, function ($paginator) {
             return $paginator->appends(Arr::except(request()->query(), $paginator->getPageName()));
         });
 

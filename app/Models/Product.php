@@ -13,6 +13,7 @@ class Product extends Model
     {
         return $this->hasMany(Category::class);
     }
+
     public function skus(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(SKU::class);
@@ -25,8 +26,9 @@ class Product extends Model
 
     public function generateVariant(array $input): array
     {
-        if (!count($input))
+        if (! count($input)) {
             return [];
+        }
 
         $result = [[]];
 

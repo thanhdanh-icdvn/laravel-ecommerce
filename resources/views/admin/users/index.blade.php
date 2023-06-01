@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    <div class="flex flex-col w-full overflow-x-auto">
+    <div class="relative flex flex-col w-full pb-4 table-wrap">
         <table class="min-w-full text-sm font-light border dark:border-neutral-300">
             <thead class="font-medium border-b dark:border-neutral-300 bg-slate-200">
                 <tr>
@@ -47,10 +47,10 @@
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $user->updated_at->format('m-d-Y H:i:s') }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                            <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                 <ul class="flex flex-row justify-center w-full space-x-4">
-                                    <li><a class="text-info" href="{{ route('users.show', $user->id) }}">Show</a></li>
-                                    <li><a class="text-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
+                                    <li><a class="text-info" href="{{ route('admin.users.show', $user->id) }}">Show</a></li>
+                                    <li><a class="text-primary" href="{{ route('admin.users.edit', $user->id) }}">Edit</a>
                                     </li>
                                     <li>
                                         @csrf

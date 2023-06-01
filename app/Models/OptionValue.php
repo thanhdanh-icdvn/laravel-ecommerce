@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class OptionValue extends Model
 {
     use HasFactory;
+
     protected $fillable = ['value', 'label'];
 
     public function option(): \Illuminate\Database\Eloquent\Relations\BelongsTo

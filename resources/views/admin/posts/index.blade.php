@@ -19,8 +19,8 @@
         </div>
     @endif
 
-    <div class="flex flex-col w-full overflow-x-auto">
-        <table class="min-w-full text-sm font-light border dark:border-neutral-300">
+    <div class="relative flex flex-col w-full pb-4 table-wrap">
+        <table class="table min-w-full text-sm font-light border dark:border-neutral-300">
             <thead class="font-medium border-b dark:border-neutral-300 bg-slate-200">
                 <tr class="">
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">No</th>
@@ -48,7 +48,7 @@
                             {{ $post->description }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $post->slug }}</td>
-                        <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300 block text-center">
+                        <td class="block px-6 py-4 font-medium text-center border-r whitespace-nowrap dark:border-neutral-300">
                            @if (is_null($post->featured_image))
                             <p>No featured image</p>
                            @else

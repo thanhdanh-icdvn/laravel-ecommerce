@@ -33,7 +33,7 @@ class TagSeeder extends Seeder
             Tag::insert([
                 'name' => $tag['name'],
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ]);
         }
     }

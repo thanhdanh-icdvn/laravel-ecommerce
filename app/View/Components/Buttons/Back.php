@@ -13,7 +13,7 @@ class Back extends Component
      */
     public function __construct(public string $backUrl)
     {
-        $this->backUrl=$backUrl;
+        $this->backUrl = $backUrl;
     }
 
     /**
@@ -21,6 +21,6 @@ class Back extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.buttons.back',['attributes','backUrl','slot']);
+        return view('components.buttons.back', ['attributes', 'backUrl', 'slot']);
     }
 }

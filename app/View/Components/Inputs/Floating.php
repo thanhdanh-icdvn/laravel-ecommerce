@@ -2,7 +2,6 @@
 
 namespace App\View\Components\Inputs;
 
-use App\Enums\LabelType;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -12,7 +11,7 @@ class Floating extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $label = "No label", public string $type= "default")
+    public function __construct(public string $label = 'No label', public string $type = 'default')
     {
         $this->label = $label;
         $this->type = $type;

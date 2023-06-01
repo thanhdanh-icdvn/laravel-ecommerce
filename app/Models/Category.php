@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     use HasFactory;
+
     public function getRouteKeyName(): string
     {
         return 'slug';
@@ -22,7 +23,7 @@ class Category extends Model
 
     public function parent(): BelongsTo
     {
-        return $this->belongsTo(self::class.'parent_id','id');
+        return $this->belongsTo(self::class.'parent_id', 'id');
     }
 
     public function parentRecursive(): BelongsTo
@@ -38,6 +39,7 @@ class Category extends Model
             $result->push($item);
             $result = $result->merge($item->parentRecursiveFlatten());
         }
+
         return $result;
     }
 

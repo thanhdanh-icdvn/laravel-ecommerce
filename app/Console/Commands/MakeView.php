@@ -1,14 +1,12 @@
 <?php
 
-
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use File;
+use Illuminate\Console\Command;
 
 class MakeView extends Command
 {
-
     /**
      * The name and signature of the console command.
      *
@@ -33,16 +31,17 @@ class MakeView extends Command
         $view = $this->argument('view');
 
         $path = $this->viewPath($view);
-        $content = "{{-- ".$path." --}}";
+        $content = '{{-- '.$path.' --}}';
 
         $this->createDir($path);
 
         if (File::exists($path)) {
             $this->error("View {$path} already exists!");
+
             return;
         }
 
-        File::put($path,  $content);
+        File::put($path, $content);
 
         $this->info("View {$path} created.");
     }
@@ -50,25 +49,23 @@ class MakeView extends Command
     /**
      * Get the view full path.
      *
-     * @param $view
      * @return string
      */
     private function viewPath($view)
     {
-        $view = str_replace('.', '/', $view) . '.blade.php';
+        $view = str_replace('.', '/', $view).'.blade.php';
+
         return "resources/views/{$view}";
     }
 
     /**
      * Create view directory if not exists.
-     *
-     * @param $path
      */
     private function createDir($path)
     {
         $dir = dirname($path);
 
-        if (!file_exists($dir)) {
+        if (! file_exists($dir)) {
             mkdir($dir, 0777, true);
         }
     }

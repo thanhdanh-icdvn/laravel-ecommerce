@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('post_tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Post::class,'post_id')->nullable()->default(null)->constrained()->nullOnDelete();
-            $table->foreignIdFor(\App\Models\Tag::class,'tag_id')->nullable()->default(null)->constrained()->nullOnDelete();
+            $table->foreignIdFor(\App\Models\Post::class, 'post_id')->nullable()->default(null)->constrained()->nullOnDelete();
+            $table->foreignIdFor(\App\Models\Tag::class, 'tag_id')->nullable()->default(null)->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

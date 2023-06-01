@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Option extends Model
 {
     use HasFactory;
+
     protected $fillable = ['name', 'visual'];
 
     public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo

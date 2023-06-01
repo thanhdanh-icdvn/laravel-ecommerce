@@ -5,17 +5,16 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\SocialAccount;
 use App\Models\User;
-use Laravel\Socialite\Contracts\User as ProviderUser;
 use Illuminate\Auth\Events\Registered as RegisteredEvent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
+use Laravel\Socialite\Contracts\User as ProviderUser;
+use Laravel\Socialite\Facades\Socialite;
 
 class SocialController extends Controller
 {
-
     /**
      * Redirect the user to the Provider authentication page.
      *
@@ -31,15 +30,16 @@ class SocialController extends Controller
      * Obtain the user information from Provider.
      *
      * @param $provider string
+     * @return \Illuminate\Http\RedirectResponse
+     *
      * @throws \Exception
      * @throws \Throwable
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function handleProviderCallback($provider)
     {
         try {
             $providerUser = Socialite::driver($provider)->user();
-        } catch (\Throwable | \Exception $e) {
+        } catch (\Throwable|\Exception $e) {
             // Send actual error message in development
             if (config('app.debug')) {
                 throw $e;
@@ -56,7 +56,7 @@ class SocialController extends Controller
 
         // This session variable can help to determine if user is logged-in via socialite
         session()->put([
-            'auth.social_id' => $providerUser->getId()
+            'auth.social_id' => $providerUser->getId(),
         ]);
 
         DB::commit();
@@ -70,15 +70,14 @@ class SocialController extends Controller
      * Create a user if does not exist
      *
      * @param $providerName string
-     * @param $providerUser
      * @return mixed
      */
-    protected function findOrCreateUser($providerName,ProviderUser $providerUser )
+    protected function findOrCreateUser($providerName, ProviderUser $providerUser)
     {
         $social = SocialAccount::firstOrNew([
             'provider_user_id' => $providerUser->getId(),
             'provider' => $providerName,
-            'profile_photo_url' => $providerUser->getAvatar()
+            'profile_photo_url' => $providerUser->getAvatar(),
         ]);
 
         if ($social->exists) {
@@ -86,10 +85,10 @@ class SocialController extends Controller
         }
 
         $user = User::firstOrNew([
-            'email' => $providerUser->getEmail()
+            'email' => $providerUser->getEmail(),
         ]);
 
-        if (!$user->exists) {
+        if (! $user->exists) {
             $user->name = $providerUser->getName();
             $user->password = Hash::make(Str::random(16));
             $user->save();
@@ -106,7 +105,6 @@ class SocialController extends Controller
     /**
      * The user has been authenticated.
      *
-     * @param  User $user
      * @return mixed
      */
     protected function authenticated(User $user)

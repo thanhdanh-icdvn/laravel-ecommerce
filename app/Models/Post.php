@@ -9,37 +9,39 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
     protected $table = 'posts';
+
     protected $fillable = [
         'user_id',
-        'title',
+        'name',
         'description',
         'body',
-        'featured_image'
+        'featured_image',
     ];
 
-        /**
+    /**
      * Scope a query to search for a term in the attributes
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch(Builder $query)
     {
         $searchTerm = request()->search;
         if (!empty($searchTerm)) {
-            $query = $query->whereLike(['title', 'description', 'slug', 'created_at', 'updated_at'], $searchTerm);
+            $query = $query->whereLike(['name', 'description', 'slug', 'created_at', 'updated_at'], $searchTerm);
         }
+
         return $query;
     }
 
     public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'user_id','id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function tags():\Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function tags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Tag::class,'post_tag');
+        return $this->belongsToMany(Tag::class, 'post_tag');
     }
 }

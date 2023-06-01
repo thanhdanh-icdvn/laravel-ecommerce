@@ -17,6 +17,7 @@ class PostController extends Controller
     {
         $paginateNumber = 10;
         $posts = Post::with('author')->with(['tags'])->search()->paginate($paginateNumber);
+
         return view('admin.posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * $paginateNumber);
     }
@@ -58,19 +59,20 @@ class PostController extends Controller
                 ->save(storage_path('app/public/' . $path . 'thumbnails/' . 'resized_' . $new_filename));
 
             if ($upload) {
-                $post = Post::create(array_merge($request->only('title', 'description', 'body'), [
+                $post = Post::create(array_merge($request->only('name', 'description', 'body'), [
                     'user_id' => auth()->id(),
-                    'featured_image' => $new_filename
+                    'featured_image' => $new_filename,
                 ]));
             }
-        }else{
-            $post = Post::create(array_merge($request->only('title', 'description', 'body'), [
-                'user_id' => auth()->id()
+        } else {
+            $post = Post::create(array_merge($request->only('name', 'description', 'body'), [
+                'user_id' => auth()->id(),
             ]));
         }
-        if($request->has('tags')){
+        if ($request->has('tags')) {
             $post->tags()->attach($request->tags);
         }
+
         return redirect()->route('admin.posts.index')
             ->withSuccess(__('Post created successfully.'));
     }
@@ -81,7 +83,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('admin.posts.show', [
-            'post' => $post
+            'post' => $post,
         ]);
     }
 
@@ -91,7 +93,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         return view('admin.posts.edit', [
-            'post' => $post
+            'post' => $post,
         ]);
     }
 
@@ -100,7 +102,7 @@ class PostController extends Controller
      */
     public function update(PostUpdateRequest $request, Post $post)
     {
-        $post->update($request->only('title', 'description', 'body'));
+        $post->update($request->only('name', 'description', 'body'));
 
         return redirect()->route('admin.posts.index')
             ->withSuccess(__('Post updated successfully.'));

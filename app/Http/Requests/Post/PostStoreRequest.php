@@ -22,14 +22,14 @@ class PostStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required','unique:posts,title'],
+            'title' => ['required', 'unique:posts,title'],
             'description' => ['required'],
             'body' => ['required'],
-            'featured_image' =>['nullable','mimes:png,jpg,jpeg','max:2048']
+            'featured_image' => ['nullable', 'mimes:png,jpg,jpeg', 'max:2048'],
         ];
     }
 
-    public function messages():array
+    public function messages(): array
     {
         return [
             'required' => 'The :attribute is required',
