@@ -64,4 +64,4 @@ Route::post('email/verification-notification', function (Request $request) {
 
 Route::post('upload/post-image', [PostTaskController::class, 'uploadImage'])->name('upload.post.image');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

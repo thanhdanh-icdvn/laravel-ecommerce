@@ -8,5 +8,5 @@ window.Alpine = Alpine;
 Alpine.plugin(collapse);
 Alpine.start();
 
-new PerfectScrollbar('#default-sidebar');
-new PerfectScrollbar('.table-wrap');
+new PerfectScrollbar("#default-sidebar");
+// new PerfectScrollbar('.table-wrap');

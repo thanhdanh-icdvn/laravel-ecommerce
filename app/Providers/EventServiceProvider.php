@@ -23,7 +23,7 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-            \SocialiteProviders\Zalo\ZaloExtendSocialite::class.'@handle',
+            \SocialiteProviders\Zalo\ZaloExtendSocialite::class . '@handle',
         ],
     ];
 
