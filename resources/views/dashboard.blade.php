@@ -23,8 +23,8 @@
                         </svg>
                     </div>
                     <input type="search" id="simple-search"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Search" required>
+                        class="bg-gray-50 border border-stone-300 text-gray-900 text-sm rounded-lg rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+                        placeholder="{{ __('Search anything here...') }}" required>
                 </div>
                 <button type="submit"
                     class="p-2.5 ml-0 text-sm font-medium text-white bg-blue-700 rounded-lg rounded-l-none border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
@@ -66,8 +66,8 @@
                             </path>
                         </svg>
                     </div>
-                    <p class="text-lg uppercase gray-700 text-">Total Revenue</p>
-                    <p class="text-gray-700">{{ number_format(23456789, 0) }}</p>
+                    <p class="uppercase gray-700 text-">Total Revenue</p>
+                    <p class="mt-3 text-gray-700">{{ number_format(23456789, 0) }}</p>
                 </div>
             </li>
             <li>
@@ -82,8 +82,8 @@
                                 d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"></path>
                         </svg>
                     </div>
-                    <p class="text-lg text-gray-700 uppercase ">Profit rate</p>
-                    <p class="text-gray-700">
+                    <p class="text-gray-700 uppercase ">Profit rate</p>
+                    <p class="mt-3 text-gray-700">
                         {{ 23.34 }}
                     </p>
                 </div>
@@ -99,8 +99,8 @@
                             </path>
                         </svg>
                     </div>
-                    <p class="text-lg text-gray-700 uppercase">Orders</p>
-                    <p class="text-gray-700">{{ number_format(6789) }}</p>
+                    <p class="text-gray-700 uppercase ">Orders</p>
+                    <p class="mt-3 text-gray-700">{{ number_format(6789) }}</p>
                 </div>
             </li>
             <li>
@@ -114,8 +114,8 @@
                             </path>
                         </svg>
                     </div>
-                    <p class="text-lg text-gray-700 uppercase">New customer</p>
-                    <p class="text-gray-700">{{ number_format(23345) }}</p>
+                    <p class="text-gray-700 uppercase ">New customer</p>
+                    <p class="mt-3 text-gray-700">{{ number_format(23345) }}</p>
                 </div>
             </li>
         </ul>
