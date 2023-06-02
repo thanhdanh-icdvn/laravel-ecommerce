@@ -159,6 +159,7 @@
                             getRandomInt(0, 99999),
                         ],
                         order: "1",
+                        pointStyle:'circle'
                     },
                     {
                         label: "Income",
@@ -179,6 +180,7 @@
                             getRandomInt(0, 99999),
                         ],
                         order: "1",
+                        pointStyle:'circle'
                     },
                     {
                         label: "Revenue",
@@ -200,6 +202,7 @@
                         ],
                         type: "line",
                         order: "0",
+                        pointStyle:'circle'
                     },
                 ],
             };
@@ -207,7 +210,20 @@
             const config = {
                 type: "bar",
                 data: data,
-            };
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Chart Title',
+                        },
+                        legend: {
+                            labels: {
+                                usePointStyle: true,
+                            },
+                        }
+                    }
+                }
+            }
 
             new Chart(document.getElementById("myChart"), config);
         </script>
