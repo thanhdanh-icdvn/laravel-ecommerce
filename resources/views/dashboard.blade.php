@@ -1,34 +1,22 @@
 <x-admin-layout>
     <x-slot name="title">{{ __('Dashboard') }}</x-slot>
-    {{-- <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot> --}}
-    <div class="flex flex-row justify-between item">
-        <div class="top-left">
-            <h2 class="font-bold leading-6"><span class="font-light">Hello,</span>{{ Auth::user()->name }}</h2>
-            <p class="text-xs text-light">Have a productive new day</p>
+    <div class="flex flex-col flex-wrap justify-between gap-4 lg:flex-row">
+        <div class="flex flex-col space-y">
+            <h2 class="text-2xl font-bold leading-normal"><span class="font-light">Hello,
+                </span>{{ Auth::user()->name }}
+            </h2>
+            <p class="text-sm font-light text-zinc-500">Have a productive new day!</p>
         </div>
-        <div class="flex flex-row gap-2 top-right">
-            <form class="flex items-center">
-                <label for="simple-search" class="sr-only">Search</label>
-                <div class="relative w-full">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
+        <div class="flex flex-row justify-center flex-1 gap-2">
+            <form class="flex items-center w-full">
+                <div class="relative flex w-full">
                     <input type="search" id="simple-search"
-                        class="bg-gray-50 border border-stone-300 text-gray-900 text-sm rounded-lg rounded-r-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+                        class="block w-full p-3.5 text-sm text-gray-900 bg-transparent border border-gray-200 rounded-lg rounded-r-none focus:ring-blue-500 focus:border-blue-500 placeholder-zinc-500"
                         placeholder="{{ __('Search anything here...') }}" required>
                 </div>
                 <button type="submit"
-                    class="p-2.5 ml-0 text-sm font-medium text-white bg-blue-700 rounded-lg rounded-l-none border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    class="p-3 ml-0 text-sm font-medium text-white border border-gray-200 rounded-lg rounded-l-none focus:ring-4 focus:outline-none focus:ring-blue-300">
+                    <svg class="w-6 h-6 stroke-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -36,7 +24,7 @@
                     <span class="sr-only">Search</span>
                 </button>
             </form>
-            <button class="relative p-2 border border-gray-300 rounded-lg aspect-square">
+            <button class="relative p-3 border border-gray-200 rounded-lg aspect-square">
                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -53,10 +41,10 @@
         </div>
     </div>
 
-    <section class="my-10">
+    <section class="mt-10">
         <ul class="grid grid-cols-1 gap-4 md:gap-6 xl:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <li>
-                <div class="flex flex-col items-center justify-center gap-4 p-5 font-bold bg-yellow-100 rounded-lg">
+                <div class="flex flex-col items-center justify-center p-5 font-bold bg-yellow-100 rounded-lg">
                     <div class="p-2.5 bg-yellow-300 rounded-full icon-wrap">
                         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -66,12 +54,12 @@
                             </path>
                         </svg>
                     </div>
-                    <p class="uppercase gray-700 text-">Total Revenue</p>
-                    <p class="mt-3 text-gray-700">{{ number_format(23456789, 0) }}</p>
+                    <p class="mt-3 text-gray-700 capitalize">Total Revenue</p>
+                    <p class="mt-1 text-2xl text-gray-700">{{ number_format(23456789, 0) }}</p>
                 </div>
             </li>
             <li>
-                <div class="flex flex-col items-center justify-center gap-4 p-5 font-bold bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center justify-center p-5 font-bold bg-blue-100 rounded-lg">
                     <div class="p-2.5 bg-blue-400 rounded-full icon-wrap">
                         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -82,14 +70,14 @@
                                 d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"></path>
                         </svg>
                     </div>
-                    <p class="text-gray-700 uppercase ">Profit rate</p>
-                    <p class="mt-3 text-gray-700">
+                    <p class="mt-3 text-gray-700 capitalize">Profit rate</p>
+                    <p class="mt-1 text-2xl text-gray-700">
                         {{ 23.34 }}
                     </p>
                 </div>
             </li>
             <li>
-                <div class="flex flex-col items-center justify-center gap-4 p-5 font-bold bg-red-100 rounded">
+                <div class="flex flex-col items-center justify-center p-5 font-bold bg-red-100 rounded">
                     <div class="p-2.5 bg-red-400 rounded-full icon-wrap">
                         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -99,12 +87,12 @@
                             </path>
                         </svg>
                     </div>
-                    <p class="text-gray-700 uppercase ">Orders</p>
-                    <p class="mt-3 text-gray-700">{{ number_format(6789) }}</p>
+                    <p class="mt-3 text-gray-700 capitalize">Orders</p>
+                    <p class="mt-1 text-2xl text-gray-700">{{ number_format(6789) }}</p>
                 </div>
             </li>
             <li>
-                <div class="flex flex-col items-center justify-center gap-4 p-5 font-bold bg-green-200 rounded">
+                <div class="flex flex-col items-center justify-center p-5 font-bold bg-green-200 rounded">
                     <div class="p-2.5 bg-green-400 rounded-full icon-wrap">
                         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -114,10 +102,17 @@
                             </path>
                         </svg>
                     </div>
-                    <p class="text-gray-700 uppercase ">New customer</p>
-                    <p class="mt-3 text-gray-700">{{ number_format(23345) }}</p>
+                    <p class="mt-3 text-gray-700 capitalize">New customer</p>
+                    <p class="mt-1 text-2xl text-gray-700">{{ number_format(23345) }}</p>
                 </div>
             </li>
         </ul>
+    </section>
+
+    <section class="mt-10">
+        <h3 class="text-xl font-bold capitalize">Details Analysis</h3>
+        <div style="width: 600px; margin: auto;">
+            <canvas id="myChart"></canvas>
+        </div>
     </section>
 </x-admin-layout>

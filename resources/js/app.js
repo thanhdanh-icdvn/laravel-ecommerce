@@ -1,4 +1,5 @@
 import "./bootstrap";
+import "./chart";
 import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
 import PerfectScrollbar from "perfect-scrollbar";
