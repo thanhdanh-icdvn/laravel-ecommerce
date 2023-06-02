@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <x-slot name="title">{{__('Danh sách người dùng')}}</x-slot>
+    <x-slot name="title">{{ __('Danh sách người dùng') }}</x-slot>
 
     <div class="content__head">
         <div class="flex flex-wrap items-center justify-between transition-all duration-300">
@@ -27,6 +27,7 @@
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">No</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Name</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Email</th>
+                    <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Posts</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Created At</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Updated At</th>
                     <th scope="col" class="px-6 py-4 border-r dark:border-neutral-300">Action</th>
@@ -42,6 +43,8 @@
                             {{ $user->name }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $user->email }}</td>
+                        <td class="px-6 py-4 font-medium text-right border-r whitespace-nowrap dark:border-neutral-300">
+                            {{ $user->posts->count() }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             {{ $user->created_at->format('m-d-Y H:i:s') }}</td>
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
@@ -49,8 +52,10 @@
                         <td class="px-6 py-4 font-medium border-r whitespace-nowrap dark:border-neutral-300">
                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                 <ul class="flex flex-row justify-center w-full space-x-4">
-                                    <li><a class="text-info" href="{{ route('admin.users.show', $user->id) }}">Show</a></li>
-                                    <li><a class="text-primary" href="{{ route('admin.users.edit', $user->id) }}">Edit</a>
+                                    <li><a class="text-info" href="{{ route('admin.users.show', $user->id) }}">Show</a>
+                                    </li>
+                                    <li><a class="text-primary"
+                                            href="{{ route('admin.users.edit', $user->id) }}">Edit</a>
                                     </li>
                                     <li>
                                         @csrf
@@ -69,4 +74,10 @@
     <div class="block mt-4">
         {{ $users->links() }}
     </div>
+
+    @push('scripts')
+        <script type="module">
+            new PerfectScrollbar('.table-wrap');
+        </script>
+    @endpush
 </x-admin-layout>
