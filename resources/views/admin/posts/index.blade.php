@@ -91,4 +91,10 @@
     <div class="block mt-4">
         {{ $posts->links() }}
     </div>
+
+    @push('scripts')
+        <script type="module">
+            new PerfectScrollbar('.table-wrap');
+        </script>
+    @endpush
 </x-admin-layout>
