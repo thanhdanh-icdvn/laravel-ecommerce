@@ -8,8 +8,9 @@
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required
-                autofocus autocomplete="username" />
+            <x-text-input id="email" class="mt-1 block w-full" type="email"
+                name="email" :value="old('email')" required autofocus
+                autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
@@ -17,22 +18,25 @@
         <div class="relative mt-4" x-data="{ show: false }">
             <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block w-full mt-1" name="password" required
-                autocomplete="current-password" />
-            <div class="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6 mt-5" x-on:click="show=! show"
+            <x-text-input id="password" class="mt-1 block w-full"
+                name="password" required autocomplete="current-password" />
+            <div
+                class="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-3 text-sm leading-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    class="mt-5 h-6 w-6" x-on:click="show=! show"
                     :class="{
                         'hidden': show
                     }">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
 
-
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6 mt-5" x-on:click="show=! show"
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    class="mt-5 h-6 w-6" x-on:click="show=! show"
                     :class="{
                         'hidden': !show
                     }">
@@ -44,22 +48,24 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
         <!-- Remember Me -->
-        <div class="block mt-4">
+        <div class="mt-4 block">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox"
-                    class="text-indigo-600 border-gray-300 rounded shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                    name="remember">
+                <span
+                    class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
         <!-- Dont have account -->
-        <p class="pt-1 mt-2 mb-0 text-sm font-semibold">
+        <p class="mt-2 mb-0 pt-1 text-sm font-semibold">
             Don't have an account?
             <a href="{{ url('register') }}"
-                class="transition duration-150 ease-in-out text-danger hover:text-danger-600 focus:text-danger-600 active:text-danger-700">Register</a>
+                class="text-danger hover:text-danger-600 focus:text-danger-600 active:text-danger-700 transition duration-150 ease-in-out">Register</a>
         </p>
-        <div class="flex items-center justify-end mt-4">
+        <div class="mt-4 flex items-center justify-end">
             @if (Route::has('password.request'))
-                <a class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                <a class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
@@ -72,14 +78,15 @@
         <!-- Separator between social media sign in and email/password sign in -->
         <div
             class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-            <p class="mx-4 mb-0 font-semibold text-center text-gray-500">
+            <p class="mx-4 mb-0 text-center font-semibold text-gray-500">
                 Or
             </p>
         </div>
-        <div class="flex flex-col items-center justify-end w-full gap-2 mt-2">
+        <div class="mt-2 flex w-full flex-col items-center justify-end gap-2">
             <a href="{{ url('auth/google') }}"
-                class="inline-flex items-center justify-center w-full gap-2 bg-google btn-brand">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                class="bg-google btn-brand inline-flex w-full items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                    fill="currentColor" viewBox="0 0 24 24">
                     <path
                         d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
                         fill-rule="evenodd" clip-rule="evenodd" />
@@ -87,16 +94,18 @@
                 <span>Login with Google</span>
             </a>
             <a href="{{ url('auth/facebook') }}"
-                class="inline-flex items-center justify-center w-full gap-2 bg-facebook btn-brand">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                class="bg-facebook btn-brand inline-flex w-full items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                    fill="currentColor" viewBox="0 0 24 24">
                     <path
                         d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                 </svg>
                 <span>Login with Facebook</span>
             </a>
             <a href="{{ url('auth/zalo') }}"
-                class="inline-flex items-center justify-center w-full gap-2 bg-zalo btn-brand">
-                <svg viewBox="0 0 50 50" fill="none" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+                class="bg-zalo btn-brand inline-flex w-full items-center justify-center gap-2">
+                <svg viewBox="0 0 50 50" fill="none" class="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M22.782 0.166016H27.199C33.2653 0.166016 36.8103 1.05701 39.9572 2.74421C43.1041 4.4314 45.5875 6.89585 47.2557 10.0428C48.9429 13.1897 49.8339 16.7347 49.8339 22.801V27.1991C49.8339 33.2654 48.9429 36.8104 47.2557 39.9573C45.5685 43.1042 43.1041 45.5877 39.9572 47.2559C36.8103 48.9431 33.2653 49.8341 27.199 49.8341H22.8009C16.7346 49.8341 13.1896 48.9431 10.0427 47.2559C6.89583 45.5687 4.41243 43.1042 2.7442 39.9573C1.057 36.8104 0.166016 33.2654 0.166016 27.1991V22.801C0.166016 16.7347 1.057 13.1897 2.7442 10.0428C4.43139 6.89585 6.89583 4.41245 10.0427 2.74421C13.1707 1.05701 16.7346 0.166016 22.782 0.166016Z"
                         fill="#0068FF" />

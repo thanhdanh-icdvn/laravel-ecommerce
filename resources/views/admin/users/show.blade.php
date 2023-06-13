@@ -1,9 +1,12 @@
 <x-admin-layout>
-    <x-slot name="title">{{__('Chi tiết người dùng')}}</x-slot>
+    <x-slot name="title">{{ __('Chi tiết người dùng') }}</x-slot>
     <div class="flex flex-col">
         <div class="block">
-            <h2 class="mt-0 mb-2 text-4xl font-medium leading-tight text-primary">User detail</h2>
-            <x-buttons.back backUrl="{{route('admin.users.index')}}">Back</x-buttons.back>
+            <h2
+                class="text-primary mt-0 mb-2 text-4xl font-medium leading-tight">
+                User detail</h2>
+            <x-buttons.back backUrl="{{ route('admin.users.index') }}">Back
+            </x-buttons.back>
         </div>
     </div>
 
