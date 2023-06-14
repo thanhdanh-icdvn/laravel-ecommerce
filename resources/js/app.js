@@ -10,5 +10,3 @@ window.Alpine = Alpine;
 window.Chart = Chart;
 Alpine.plugin(collapse);
 Alpine.start();
-
-new PerfectScrollbar("#default-sidebar");

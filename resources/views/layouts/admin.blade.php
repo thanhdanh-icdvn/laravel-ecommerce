@@ -53,6 +53,9 @@
             </div>
         </main>
     </div>
+    <script type="module">
+        new PerfectScrollbar("#default-sidebar");
+    </script>
     @stack('scripts')
 </body>
 
