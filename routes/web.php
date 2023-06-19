@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\SocialController;
+use App\Http\Controllers\ComponentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostTaskController;
 use App\Http\Controllers\ProfileController;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('front.home');
 // All route with prefix /admin
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
@@ -33,6 +34,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::resource('users', UserController::class);
         Route::resource('posts', PostController::class);
+        Route::resource('components', ComponentController::class);
         Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
