@@ -20,6 +20,6 @@ class IsAdmin
             return $next($request);
         }
 
-        return redirect('welcom')->with('error', "You don't have admin access.");
+        return redirect('front.top.index')->with('error', "You don't have admin access.");
     }
 }

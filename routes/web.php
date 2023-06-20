@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('front.home');
+    return view('front.top.index');
+})->name('front.top.index');
 
 Route::prefix('auth')->group(function () {
     Route::prefix('{provider}')->group(function () {

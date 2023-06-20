@@ -8,6 +8,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Vite;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Paginator::useTailwind();
+        # https://laravel.com/docs/10.x/vite
+        Vite::macro('image', fn(string $asset) => $this->asset("resources/images/${asset}"));
         $this->app->resolving(LengthAwarePaginator::class, function ($paginator) {
             return $paginator->appends(Arr::except(request()->query(), $paginator->getPageName()));
         });

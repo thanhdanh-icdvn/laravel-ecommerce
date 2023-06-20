@@ -1,6 +1,7 @@
 @import "tinymce/skins/ui/oxide/content.css";
 @import "tinymce/skins/content/default/content.css";
 @import "perfect-scrollbar/css/perfect-scrollbar.css";
+@import "aos/dist/aos.css";
 
 @tailwind base;
 @tailwind components;

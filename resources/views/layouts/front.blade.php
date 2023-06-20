@@ -26,12 +26,13 @@
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
 </head>
 
-<body class="font-sans text-gray-900 antialiased">
+<body class="font-sans antialiased text-gray-900">
+    @include('layouts.includes.client.header')
     <main>
         {{ $slot }}
     </main>
+    @include('layouts.includes.client.footer')
     @stack('scripts')
 </body>
-@include('layouts.includes.client.footer')
 
 </html>
