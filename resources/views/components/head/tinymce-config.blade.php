@@ -26,7 +26,7 @@
                     var blobCache = tinymce.activeEditor
                         .editorUpload.blobCache;
                     var base64 = reader.result.split(',')[
-                    1];
+                        1];
                     var blobInfo = blobCache.create(id,
                         file, base64);
                     blobCache.add(blobInfo);

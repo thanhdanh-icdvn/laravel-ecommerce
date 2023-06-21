@@ -65,7 +65,7 @@
             'pink' => 'hover:bg-pink-700 active:bg-pink-700',
             'black' => 'hover:bg-black active:bg-black',
         ],
-    ]
+    ],
 ])
 @php
     $show_spinner = filter_var($show_spinner, FILTER_VALIDATE_BOOLEAN);
@@ -75,35 +75,38 @@
     $can_submit = filter_var($can_submit, FILTER_VALIDATE_BOOLEAN);
     $canSubmit = filter_var($canSubmit, FILTER_VALIDATE_BOOLEAN);
 
-    if($showSpinner) $show_spinner = $showSpinner;
-    if($hasSpinner) $has_spinner = $hasSpinner;
-    if($canSubmit) $can_submit = $canSubmit;
+    if ($showSpinner) {
+        $show_spinner = $showSpinner;
+    }
+    if ($hasSpinner) {
+        $has_spinner = $hasSpinner;
+    }
+    if ($canSubmit) {
+        $can_submit = $canSubmit;
+    }
 
     $button_type = $can_submit ? 'submit' : 'button';
     $spinner_css = !$show_spinner ? 'hidden' : '';
-    $primary_colour = $type === 'primary' ? $colouring['bg'][$color]. ' '. $colouring['focus'][$color]. ' '. $colouring['hover_active'][$color] : '';
-    $button_text_css = (!empty($buttonTextCss)) ? $buttonTextCss : $button_text_css;
+    $primary_colour = $type === 'primary' ? $colouring['bg'][$color] . ' ' . $colouring['focus'][$color] . ' ' . $colouring['hover_active'][$color] : '';
+    $button_text_css = !empty($buttonTextCss) ? $buttonTextCss : $button_text_css;
     $button_text_colour = $button_text_css ?? ($type === 'primary' ? 'text-white hover:text-white' : 'text-black hover:text-black');
     $is_disabled = $disabled ? 'disabled' : '';
-    $tag = ($tag !== 'a' && $tag !== 'button') ? 'button' : $tag;
+    $tag = $tag !== 'a' && $tag !== 'button' ? 'button' : $tag;
 @endphp
 <{{ $tag }}
     {{ $attributes->merge(['class' => "bw-button cursor-pointer $size $type $name $primary_colour $is_disabled"]) }}
-    @if($disabled)
-        disabled
-    @endif
-    @if($tag == 'button')
-        type="{{ $button_type }}"
-    @endif
->
-    @if(!empty($icon) && !$icon_right)
-        <x-bladewind::icon name="{{$icon}}" class="h-5 w-5 !-ml-2 mr-1 dark:text-white/80" />
+    @if ($disabled) disabled @endif
+    @if ($tag == 'button') type="{{ $button_type }}" @endif>
+    @if (!empty($icon) && !$icon_right)
+        <x-bladewind::icon name="{{ $icon }}"
+            class="!-ml-2 mr-1 h-5 w-5 dark:text-white/80" />
     @endif
     <span class="{{ $button_text_colour }}">{{ $slot }}</span>
-    @if(!empty($icon) && $icon_right && !$has_spinner)
-        <x-bladewind::icon name="{{$icon}}" class="h-5 w-5 !-mr-2 ml-2 dark:text-white/80" />
+    @if (!empty($icon) && $icon_right && !$has_spinner)
+        <x-bladewind::icon name="{{ $icon }}"
+            class="!-mr-2 ml-2 h-5 w-5 dark:text-white/80" />
     @endif
-    @if($has_spinner)
+    @if ($has_spinner)
         <x-bladewind::spinner class="{{ $spinner_css }}"></x-bladewind::spinner>
     @endif
-</{{$tag}}>
+    </{{ $tag }}>

@@ -4,6 +4,7 @@
     <x-bladewind.alert>
         Your subscription is expiring in 19 days.
         <a href="#"
-            class="text-red-500 cursor-pointer underline hover:no-underline transition-all duration-1000">Renew now</a>
+            class="cursor-pointer text-red-500 underline transition-all duration-1000 hover:no-underline">Renew
+            now</a>
     </x-bladewind.alert>
 </x-admin-layout>

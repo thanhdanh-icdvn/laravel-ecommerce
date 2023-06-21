@@ -22,24 +22,30 @@
     $hasShadow = filter_var($hasShadow, FILTER_VALIDATE_BOOLEAN);
     $reduce_padding = filter_var($reduce_padding, FILTER_VALIDATE_BOOLEAN);
     $reducePadding = filter_var($reducePadding, FILTER_VALIDATE_BOOLEAN);
-    if ( !$hasShadow ) $has_shadow = $hasShadow;
-    if ( $reducePadding ) $reduce_padding = $reducePadding;
+    if (!$hasShadow) {
+        $has_shadow = $hasShadow;
+    }
+    if ($reducePadding) {
+        $reduce_padding = $reducePadding;
+    }
 @endphp
-<div class="bw-card bg-white dark:bg-slate-900 dark:border dark:border-slate-800/50 @if($header === null && ! $reduce_padding) p-8 @elseif($reduce_padding) p-4 @else @endif rounded-lg @if($has_shadow) shadow-2xl shadow-gray-200/40 dark:shadow-xl dark:shadow-slate-900 @endif {{ $class }}">
-    @if($header)
+<div
+    class="bw-card @if ($header === null && !$reduce_padding) p-8 @elseif($reduce_padding) p-4 @else @endif @if ($has_shadow) shadow-2xl shadow-gray-200/40 dark:shadow-xl dark:shadow-slate-900 @endif {{ $class }} rounded-lg bg-white dark:border dark:border-slate-800/50 dark:bg-slate-900">
+    @if ($header)
         <div class="border-b border-gray-100/30 dark:border-slate-800/50">
             {{ $header }}
         </div>
     @endif
-    @if($title && ! $header)
-        <div class="uppercase tracking-wide text-xs text-gray-500/90 mb-2">{{ $title }}</div>
+    @if ($title && !$header)
+        <div class="mb-2 text-xs uppercase tracking-wide text-gray-500/90">
+            {{ $title }}</div>
     @endif
-    <div @if($title && ! $header) class="mt-6" @endif>
+    <div @if ($title && !$header) class="mt-6" @endif>
         {{ $slot }}
     </div>
-    @if($footer)
+    @if ($footer)
         <div class="border-t border-gray-100/30 dark:border-slate-800/50">
-            {{$footer}}
+            {{ $footer }}
         </div>
     @endif
 </div>

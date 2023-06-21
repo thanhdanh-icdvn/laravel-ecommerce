@@ -1,25 +1,43 @@
 {{-- resources/views/layouts/includes/header.blade.php --}}
 <header class="relative">
-    <div class="w-full h-10 bg-white border-b top__bar">
-        <div class="container h-full mx-auto">
-            <div class="flex items-center justify-between h-full">
+    <div class="top__bar h-10 w-full border-b bg-white">
+        <div class="container mx-auto h-full">
+            <div class="flex h-full items-center justify-between">
                 <div class="topbar-nav">
                     <ul class="flex space-x-6">
-                        <li><a href=""><span class="text-xs font-medium leading-6 text-black">Account</span></a>
+                        <li>
+                            <a href="">
+                                <span
+                                    class="text-xs font-medium leading-6 text-black">
+                                    Account
+                                </span>
+                            </a>
                         </li>
-                        <li><a href=""><span class="text-xs font-medium leading-6 text-black">Tracking
-                                    Order</span></a>
+                        <li>
+                            <a href="">
+                                <span
+                                    class="text-xs font-medium leading-6 text-black">
+                                    Track order
+                                </span>
+                            </a>W
                         </li>
-                        <li><a href=""><span class="text-xs font-medium leading-6 text-black">Support</span></a>
+                        <li>
+                            <a href="">
+                                <span
+                                    class="text-xs font-medium leading-6 text-black">
+                                    Support
+                                </span>
+                            </a>
                         </li>
                     </ul>
                 </div>
-                <div class="hidden topbar-dropdowns md:block">
+                <div class="topbar-dropdowns hidden md:block">
                     <div class="flex space-x-6">
-                        <div class="flex items-center space-x-6 country-select">
+                        <div class="country-select flex items-center space-x-6">
                             <x-bladewind.dropmenu>
                                 <x-slot name="trigger">
-                                    <x-bladewind.button type="secondary" size="tiny">
+                                    <x-bladewind.button type="secondary"
+                                        size="tiny">
                                         Options
                                     </x-bladewind.button>
                                 </x-slot>
@@ -33,7 +51,8 @@
                             </x-bladewind.dropmenu>
                             <x-bladewind.dropmenu>
                                 <x-slot name="trigger">
-                                    <x-bladewind.button type="secondary" size="tiny">
+                                    <x-bladewind.button type="secondary"
+                                        size="tiny">
                                         Options
                                     </x-bladewind.button>
                                 </x-slot>
@@ -47,7 +66,8 @@
                             </x-bladewind.dropmenu>
                             <x-bladewind.dropmenu>
                                 <x-slot name="trigger">
-                                    <x-bladewind.button type="secondary" size="tiny">
+                                    <x-bladewind.button type="secondary"
+                                        size="tiny">
                                         Options
                                     </x-bladewind.button>
                                 </x-slot>
@@ -65,22 +85,27 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-10 bg-white border-gray-100">
-        <div class="quomodo-shop-drawer block h-[60px] w-full bg-white lg:hidden">
+    <div class="h-10 w-full border-gray-100 bg-white">
+        <div
+            class="quomodo-shop-drawer block h-[60px] w-full bg-white lg:hidden">
             <div class="relative h-full">
-                <div class="flex items-center justify-between w-full h-full px-5">
+                <div
+                    class="flex h-full w-full items-center justify-between px-5">
                     <div>
-                        <img src="{{ Vite::image('hamburger.svg') }}" alt="" class="w-6 h-6">
+                        <img src="{{ Vite::image('hamburger.svg') }}"
+                            alt="" class="h-6 w-6">
                     </div>
                     <div>
                         <a href="">
-                            <img src="{{ Vite::image('logo.svg') }}" alt="">
+                            <img src="{{ Vite::image('logo.svg') }}"
+                                alt="">
                         </a>
                     </div>
-                    <div class="relative cursor-pointer cart">
+                    <div class="cart relative cursor-pointer">
                         <a href="/cart">
                             <span>
-                                <img src="{{ Vite::image('cart.svg') }}" alt="" class="w-6 h-6">
+                                <img src="{{ Vite::image('cart.svg') }}"
+                                    alt="" class="h-6 w-6">
                             </span>
                         </a>
                     </div>

@@ -46,14 +46,22 @@
     $last = filter_var($last, FILTER_VALIDATE_BOOLEAN);
 @endphp
 <div class="flex text-slate-600">
-    @if(!$stacked)
-    <div class="pr-5 pt-1 w-[63px]  font-semibold whitespace-nowrap {{ $coloring['text'][$color] }}">{!!$date!!}</div>
+    @if (!$stacked)
+        <div
+            class="{{ $coloring['text'][$color] }} w-[63px] whitespace-nowrap pr-5 pt-1 font-semibold">
+            {!! $date !!}</div>
     @endif
     <div class="z-20">
-        <div class="h-8 w-8 @if($status=='pending') bg-white border-4 {{ $coloring['border'][$color] }}  @else {{$coloring['bg'][$color]}} @endif rounded-full"></div>
+        <div
+            class="@if ($status == 'pending') bg-white border-4 {{ $coloring['border'][$color] }}  @else {{ $coloring['bg'][$color] }} @endif h-8 w-8 rounded-full">
+        </div>
     </div>
-    <div class="@if(!$last) border-l-4 {{ $coloring['border'][$color] }}@endif pl-8 pb-14 z-10 text-lg" style="margin-left: -18px">
-        @if($stacked) <div class="font-semibold {{ $coloring['text'][$color] }}">{!!$date!!}</div> @endif
-        {!!$label!!}
+    <div class="@if (!$last) border-l-4 {{ $coloring['border'][$color] }} @endif z-10 pl-8 pb-14 text-lg"
+        style="margin-left: -18px">
+        @if ($stacked)
+            <div class="{{ $coloring['text'][$color] }} font-semibold">
+                {!! $date !!}</div>
+        @endif
+        {!! $label !!}
     </div>
 </div>

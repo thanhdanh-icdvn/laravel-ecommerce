@@ -19,7 +19,7 @@
     // provide a table name you can access via css
     'name' => '',
 ])
-@php 
+@php
     // reset variables for Laravel 8 support
     $has_shadow = filter_var($has_shadow, FILTER_VALIDATE_BOOLEAN);
     $hasShadow = filter_var($hasShadow, FILTER_VALIDATE_BOOLEAN);
@@ -28,14 +28,20 @@
     $striped = filter_var($striped, FILTER_VALIDATE_BOOLEAN);
     $compact = filter_var($compact, FILTER_VALIDATE_BOOLEAN);
     $divided = filter_var($divided, FILTER_VALIDATE_BOOLEAN);
-    if ($hasShadow) $has_shadow = $hasShadow;
-    if (!$hoverEffect) $hover_effect = $hoverEffect;
+    if ($hasShadow) {
+        $has_shadow = $hasShadow;
+    }
+    if (!$hoverEffect) {
+        $hover_effect = $hoverEffect;
+    }
 @endphp
-<div class="z-20"> {{--max-w-screen overflow-x-hidden md:w-full--}}
+<div class="z-20"> {{-- max-w-screen overflow-x-hidden md:w-full --}}
     <div class="w-full">
-        <table class="bw-table w-full {{$name}} @if($has_shadow) shadow-2xl shadow-gray-200 dark:shadow-xl dark:shadow-slate-900 @endif  @if($divided) divided @if($divider=='thin') thin @endif @endif  @if($striped) striped @endif @if($hover_effect) with-hover-effect @endif @if($compact) compact @endif">
+        <table
+            class="bw-table {{ $name }} @if ($has_shadow) shadow-2xl shadow-gray-200 dark:shadow-xl dark:shadow-slate-900 @endif @if ($divided) divided @if ($divider == 'thin') thin @endif @endif @if ($striped) striped @endif @if ($hover_effect) with-hover-effect @endif @if ($compact) compact @endif w-full">
             <thead>
-                <tr class="bg-gray-200 dark:bg-slate-800">{{ $header }}</tr>
+                <tr class="bg-gray-200 dark:bg-slate-800">{{ $header }}
+                </tr>
             </thead>
             <tbody>{{ $slot }}</tbody>
         </table>
