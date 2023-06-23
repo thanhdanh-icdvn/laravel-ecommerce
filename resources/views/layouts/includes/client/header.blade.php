@@ -1,7 +1,7 @@
 {{-- resources/views/layouts/includes/header.blade.php --}}
 <header class="relative">
     <div class="top__bar h-10 w-full border-b bg-white">
-        <div class="container mx-auto h-full">
+        <div class="mx-auto h-full max-w-[1261px] px-6">
             <div class="flex h-full items-center justify-between">
                 <div class="topbar-nav">
                     <ul class="flex space-x-6">

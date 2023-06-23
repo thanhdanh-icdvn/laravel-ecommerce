@@ -1,7 +1,7 @@
 {{-- resources/views/layouts/includes/footer.blade.php --}}
 <footer class="body-font w-full bg-gray-100 text-gray-700">
     <div
-        class="md:flex-no-wrap container mx-auto flex flex-col flex-wrap px-5 py-24 md:flex-row md:items-center lg:items-start">
+        class="md:flex-no-wrap mx-auto flex max-w-[1261px] flex-col flex-wrap px-6 py-24 md:flex-row md:items-center lg:items-start">
         <div class="mx-auto w-64 flex-shrink-0 text-center md:mx-0 md:text-left">
             <a
                 class="title-font flex items-center justify-center font-medium text-gray-900 md:justify-start">
@@ -153,7 +153,7 @@
         </div>
     </div>
     <div class="bg-gray-300">
-        <div class="container mx-auto px-5 py-4">
+        <div class="mx-auto max-w-[1261px] px-6 px-5 py-4">
             <p class="text-sm capitalize text-gray-700 xl:text-center">
                 ©
                 @php

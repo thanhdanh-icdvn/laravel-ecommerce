@@ -62,7 +62,7 @@
                     </div>
                     <div class="section-content">
                         <div class="categories-section-wrapper w-full">
-                            <div class="container-x mx-auto">
+                            <div class="max-w-[1261px] px-6 mx-auto">
                                 <div class="categories-iems w-full">
                                     <div
                                         class="mb-[46px] grid grid-cols-2 gap-10 sm:grid-cols-4 xl:grid-cols-8">
@@ -706,7 +706,7 @@
             </div>
             <div class="section-style-one new-products mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="container-x mx-auto">
+                    <div class="max-w-[1261px] px-6 mx-auto">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
@@ -1355,7 +1355,7 @@
             </div>
             <div>
                 <div class="mb-[60px] w-full lg:h-[460px]">
-                    <div class="container-x mx-auto h-full">
+                    <div class="max-w-[1261px] px-6 mx-auto h-full">
                         <div class="h-full items-center">
                             <div data-aos="fade-right"
                                 class="campaign-countdown aos-init mb-5 h-full w-full lg:mb-0"
@@ -1454,7 +1454,7 @@
                 </div>
             </div>
             <div class="products-ads-section mb-[60px] w-full">
-                <div class="container-x mx-auto">
+                <div class="max-w-[1261px] px-6 mx-auto">
                     <div
                         class="h-full w-full items-center overflow-hidden sm:flex sm:h-[290px] sm:space-x-5 xl:space-x-[30px]">
                         <div data-aos="fade-right"
@@ -1475,7 +1475,7 @@
             </div>
             <div class="section-style-one feature-products mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="container-x mx-auto">
+                    <div class="max-w-[1261px] px-6 mx-auto">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
@@ -1821,7 +1821,7 @@
                 </div>
             </div>
             <div class="section-wrapper top-selling-product mb-[60px] w-full">
-                <div class="container-x mx-auto">
+                <div class="max-w-[1261px] px-6 mx-auto">
                     <div
                         class="section-title mb-5 flex items-center justify-between">
                         <div>
@@ -2224,7 +2224,7 @@
                 </div>
             </div>
             <div class="products-ads-section mb-[60px] w-full">
-                <div class="container-x mx-auto">
+                <div class="max-w-[1261px] px-6 mx-auto">
                     <div
                         class="undefined w-full items-center overflow-hidden">
                         <div data-aos="fade-right"
@@ -2238,7 +2238,7 @@
             </div>
             <div class="section-style-one new-arrivals mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="container-x mx-auto">
+                    <div class="max-w-[1261px] px-6 mx-auto">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
@@ -3190,7 +3190,7 @@
                 </div>
             </div>
             <div class="products-ads-section mb-[60px] w-full">
-                <div class="container-x mx-auto">
+                <div class="max-w-[1261px] px-6 mx-auto">
                     <div class="164 w-full items-center overflow-hidden">
                         <div data-aos="fade-right"
                             class="aos-init mb-5 h-full w-full sm:mb-0"><a
@@ -3203,7 +3203,7 @@
             </div>
             <div class="section-style-one category-products mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="container-x mx-auto">
+                    <div class="max-w-[1261px] px-6 mx-auto">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
@@ -3613,23 +3613,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="market-category mb-[60px]">
-        <div class="mx-auto max-w-[1216px] px-6">
-            <div class="section-title mb-5 flex items-center justify-between">
-                <h2 class="text-3xl font-bold leading-tight">My Market
-                    Category</h2>
-                <div>
-                    <a href="/view-more" class="text-lg font-bold">
-                        View more
-                        <span class="">
-                            <img src="{{ Vite::image('arrow-viewmore.svg') }}"
-                                alt="" class="inline-block h-4 w-4">
-                        </span>
-                    </a>
                 </div>
             </div>
         </div>
