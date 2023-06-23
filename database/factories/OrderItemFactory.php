@@ -20,9 +20,9 @@ class OrderItemFactory extends Factory
     {
         return [
             'order_id' => Order::factory(),
-            'sku_id' => SKU::factory(),
-            'name' => $this->faker->sentence,
-            'price' => $this->faker->numberBetween(10000, 100000),
+            'sku_id'   => SKU::factory(),
+            'name'     => $this->faker->sentence,
+            'price'    => $this->faker->numberBetween(10000, 100000),
             'quantity' => $this->faker->numberBetween(1, 5),
         ];
     }

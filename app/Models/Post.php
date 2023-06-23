@@ -21,14 +21,14 @@ class Post extends Model
     ];
 
     /**
-     * Scope a query to search for a term in the attributes
+     * Scope a query to search for a term in the attributes.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch(Builder $query)
     {
         $searchTerm = request()->search;
-        if (! empty($searchTerm)) {
+        if (!empty($searchTerm)) {
             $query = $query->whereLike(['name', 'description', 'slug', 'created_at', 'updated_at'], $searchTerm);
         }
 

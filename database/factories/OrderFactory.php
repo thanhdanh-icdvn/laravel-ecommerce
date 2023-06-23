@@ -18,8 +18,8 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
-            'status' => 'awaiting_payment',
+            'user_id'        => User::factory(),
+            'status'         => 'awaiting_payment',
             'payment_method' => 'cash_on_delivery',
         ];
     }

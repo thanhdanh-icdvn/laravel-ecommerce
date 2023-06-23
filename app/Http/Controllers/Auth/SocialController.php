@@ -19,6 +19,7 @@ class SocialController extends Controller
      * Redirect the user to the Provider authentication page.
      *
      * @param $provider String
+     *
      * @return mixed
      */
     public function redirectToProvider($provider)
@@ -30,10 +31,11 @@ class SocialController extends Controller
      * Obtain the user information from Provider.
      *
      * @param $provider string
-     * @return \Illuminate\Http\RedirectResponse
      *
      * @throws \Exception
      * @throws \Throwable
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function handleProviderCallback($provider)
     {
@@ -63,20 +65,20 @@ class SocialController extends Controller
 
         return $this->authenticated($user)
             ?: redirect()->intended($this->redirectTo());
-
     }
 
     /**
-     * Create a user if does not exist
+     * Create a user if does not exist.
      *
      * @param $providerName string
+     *
      * @return mixed
      */
     protected function findOrCreateUser($providerName, ProviderUser $providerUser)
     {
         $social = SocialAccount::firstOrNew([
-            'provider_user_id' => $providerUser->getId(),
-            'provider' => $providerName,
+            'provider_user_id'  => $providerUser->getId(),
+            'provider'          => $providerName,
             'profile_photo_url' => $providerUser->getAvatar(),
         ]);
 
@@ -88,7 +90,7 @@ class SocialController extends Controller
             'email' => $providerUser->getEmail(),
         ]);
 
-        if (! $user->exists) {
+        if (!$user->exists) {
             $user->name = $providerUser->getName();
             $user->password = Hash::make(Str::random(16));
             $user->save();
@@ -99,7 +101,6 @@ class SocialController extends Controller
         $social->save();
 
         return $user;
-
     }
 
     /**
@@ -109,7 +110,6 @@ class SocialController extends Controller
      */
     protected function authenticated(User $user)
     {
-
     }
 
     /**

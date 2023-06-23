@@ -10,6 +10,6 @@ class PostTaskController extends Controller
     {
         $img_path = request()->file('file')->store('uploads', 'public');
 
-        return response()->json(['location' => asset('storage/' . $img_path)]);
+        return response()->json(['location' => asset('storage/'.$img_path)]);
     }
 }
