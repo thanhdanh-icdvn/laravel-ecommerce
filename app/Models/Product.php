@@ -26,7 +26,7 @@ class Product extends Model
 
     public function generateVariant(array $input): array
     {
-        if (! count($input)) {
+        if (!count($input)) {
             return [];
         }
 
@@ -54,12 +54,12 @@ class Product extends Model
         foreach ($skus as $index => $sku) {
             foreach ($variants[$index] as $optionValue) {
                 $variantOptions[] = [
-                    'product_id' => $this->id,
-                    'sku_id' => $sku->id,
-                    'option_id' => $optionValue['option_id'],
+                    'product_id'      => $this->id,
+                    'sku_id'          => $sku->id,
+                    'option_id'       => $optionValue['option_id'],
                     'option_value_id' => $optionValue['id'],
-                    'created_at' => now(),
-                    'updated_at' => now(),
+                    'created_at'      => now(),
+                    'updated_at'      => now(),
                 ];
             }
         }

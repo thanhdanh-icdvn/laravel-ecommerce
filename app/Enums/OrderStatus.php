@@ -11,7 +11,7 @@ enum OrderStatus: string
     {
         return match ($this) {
             self::AWAITING_PAYMENT => '#FBBF24',
-            self::PROCESSING => '#38BDF8',
+            self::PROCESSING       => '#38BDF8',
         };
     }
 
@@ -19,7 +19,7 @@ enum OrderStatus: string
     {
         return match ($this) {
             self::AWAITING_PAYMENT => __('Awaiting Payment'),
-            self::PROCESSING => __('Processing'),
+            self::PROCESSING       => __('Processing'),
         };
     }
 }

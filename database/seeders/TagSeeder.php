@@ -31,7 +31,7 @@ class TagSeeder extends Seeder
         ];
         foreach ($data as $tag) {
             Tag::insert([
-                'name' => $tag['name'],
+                'name'       => $tag['name'],
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

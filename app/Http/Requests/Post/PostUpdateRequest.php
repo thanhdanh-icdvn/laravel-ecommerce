@@ -23,9 +23,9 @@ class PostUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', Rule::unique('posts')->ignore($this->post)],
-            'description' => ['required'],
-            'body' => ['required'],
+            'name'           => ['required', Rule::unique('posts')->ignore($this->post)],
+            'description'    => ['required'],
+            'body'           => ['required'],
             'featured_image' => ['nullable', 'mimes:png,jpg,jpeg', 'max:2048'],
         ];
     }

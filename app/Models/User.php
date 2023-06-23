@@ -53,14 +53,14 @@ class User extends Authenticatable
     protected $appends = [];
 
     /**
-     * Scope a query to search for a term in the attributes
+     * Scope a query to search for a term in the attributes.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch(Builder $query)
     {
         $searchTerm = request()->search;
-        if (! empty($searchTerm)) {
+        if (!empty($searchTerm)) {
             $query = $query->whereLike(['name', 'email'], $searchTerm);
         }
 
