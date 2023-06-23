@@ -31,7 +31,7 @@ class MakeView extends Command
         $view = $this->argument('view');
 
         $path = $this->viewPath($view);
-        $content = '{{-- ' . $path . ' --}}';
+        $content = '{{-- '.$path.' --}}';
 
         $this->createDir($path);
 
@@ -53,7 +53,7 @@ class MakeView extends Command
      */
     private function viewPath($view)
     {
-        $view = str_replace('.', '/', $view) . '.blade.php';
+        $view = str_replace('.', '/', $view).'.blade.php';
 
         return "resources/views/{$view}";
     }
