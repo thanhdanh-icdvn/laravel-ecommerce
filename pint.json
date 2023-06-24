@@ -3,6 +3,16 @@
     "rules": {
         "concat_space": {
             "spacing": "one"
-        }
+        },
+        "binary_operator_spaces": {
+            "default": "single_space",
+            "operators": {
+                "=>": "align_single_space_minimal"
+            }
+        },
+        "array_indentation": true,
+        "no_useless_else": true,
+        "no_useless_return": true,
+        "combine_consecutive_issets": true
     }
 }
