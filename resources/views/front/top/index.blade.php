@@ -62,7 +62,7 @@
                     </div>
                     <div class="section-content">
                         <div class="categories-section-wrapper w-full">
-                            <div class="max-w-[1261px] px-6 mx-auto">
+                            <div class="mx-auto max-w-[1261px] px-6">
                                 <div class="categories-iems w-full">
                                     <div
                                         class="mb-[46px] grid grid-cols-2 gap-10 sm:grid-cols-4 xl:grid-cols-8">
@@ -71,7 +71,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -99,7 +99,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -143,7 +143,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -176,7 +176,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -213,7 +213,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg width="112"
@@ -240,14 +240,13 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
                                                             width="35"
                                                             height="46"
                                                             viewBox="0 0 35 46"
-                                                            fill="none"
                                                             xmlns="http://www.w3.org/2000/svg">
                                                             <path
                                                                 d="M3.12939 45.5965C2.83029 45.5965 2.62281 45.5343 2.49347 45.4018C2.34527 45.2531 2.2752 44.9854 2.27789 44.588C2.29675 41.9788 2.29407 39.3264 2.29138 36.7606C2.29138 35.8034 2.28868 34.8463 2.28868 33.8891V25.1587L2.12162 25.1452C0.83361 25.0451 0.8336 25.0451 0.830905 23.8338C0.830905 23.6283 0.833602 23.4229 0.833602 23.2147C0.836297 22.7875 0.841678 22.3441 0.825511 21.906C0.814732 21.6032 0.871322 21.3923 0.997968 21.2625C1.12461 21.1301 1.34019 21.0652 1.65276 21.0652H1.69049C2.16474 21.0733 2.67941 21.076 3.30994 21.076C3.69257 21.076 4.08058 21.076 4.47937 21.0733C4.89164 21.0733 5.31469 21.0706 5.75121 21.0706H5.93445V19.8944C5.93445 19.086 5.93445 18.2749 5.93176 17.4665C5.92906 15.7144 5.92637 13.9056 5.93715 12.1238C5.97218 6.13767 10.3347 1.30333 16.3086 0.630094C16.7101 0.58413 17.117 0.5625 17.5211 0.5625C22.7432 0.5625 27.3994 4.34507 28.5905 9.55794C28.8357 10.6259 28.8761 11.7534 28.8868 12.5077C28.9165 14.4815 28.9111 16.4174 28.9057 18.4669C28.903 19.2672 28.9003 20.0756 28.9003 20.8867V21.0706H29.0835C29.5012 21.0706 29.9108 21.0733 30.315 21.076C30.7084 21.0787 31.0964 21.0814 31.4817 21.0814C32.0988 21.0814 32.6027 21.076 33.0688 21.0625H33.1362C33.4703 21.0625 33.6994 21.1328 33.8341 21.2734C33.9715 21.4194 34.0308 21.66 34.0119 22.0115C33.9904 22.4306 33.9958 22.8578 34.0012 23.2687C34.0038 23.4634 34.0065 23.6554 34.0065 23.8501C34.0065 24.4341 33.9985 24.7693 33.8611 24.9099C33.7182 25.0559 33.3518 25.0965 32.7132 25.1587L32.5488 25.1749V31.0772C32.5488 35.5249 32.5488 39.9726 32.5488 44.4176C32.5488 45.5559 32.5272 45.5775 31.3659 45.5802H31.3255C31.1449 45.5802 30.9644 45.5775 30.7811 45.5748C30.5979 45.5721 30.4147 45.5694 30.2314 45.5694C29.962 45.5694 29.741 45.5748 29.5336 45.5884C29.4824 45.5911 29.4338 45.5938 29.388 45.5938C28.7979 45.5938 28.5635 45.3558 28.4961 44.6826C28.197 41.7409 27.8575 38.7532 27.5315 35.8656C27.4372 35.0193 27.3402 34.1757 27.2459 33.3295C27.227 33.1618 27.192 32.9942 27.1596 32.832C27.1435 32.7563 27.1273 32.6779 27.1138 32.6022L27.0869 32.4534H7.71556L7.49459 34.3839C7.34369 35.7115 7.19282 37.0282 7.04462 38.345C6.98803 38.8533 6.92875 39.3616 6.87216 39.8699C6.68893 41.484 6.49761 43.1496 6.33325 44.7934C6.27396 45.3721 6.05571 45.5857 5.52757 45.5857H5.4683C5.09106 45.5748 4.68685 45.564 4.27458 45.564C3.90812 45.564 3.57669 45.5721 3.26681 45.5911C3.21562 45.5938 3.1725 45.5965 3.12939 45.5965ZM3.44736 44.4609H5.26351L6.58382 32.4724H3.44736V44.4609ZM29.5767 44.4284H31.4171V32.4697H28.2482L29.5767 44.4284ZM3.43927 31.2773H16.8017V25.1749H3.43927V31.2773ZM18.0412 31.2692H31.409V25.1641H18.0412V31.2692ZM1.96534 23.9501H32.864V22.2332H1.96534V23.9501ZM17.4322 3.51772C22.2043 3.52313 25.9605 7.34625 25.9821 12.2184C25.9902 13.984 25.9875 15.7793 25.9875 17.5151C25.9875 18.3073 25.9848 19.0995 25.9848 19.8944V21.0571H27.8009V20.8732C27.8009 19.9161 27.8036 18.9698 27.809 18.0261C27.8171 15.9064 27.8252 13.9029 27.7956 11.8534C27.7201 6.53512 23.5004 2.07931 18.1921 1.7089C17.9469 1.69268 17.699 1.68186 17.4511 1.68186C12.2182 1.68186 7.83143 5.43739 7.24401 10.4177C6.98533 12.6186 7.00688 14.8844 7.02843 17.0771C7.03921 18.0424 7.0473 19.0401 7.03383 20.0161C7.03113 20.2054 7.0446 20.3946 7.05807 20.5785C7.06346 20.665 7.07156 20.7488 7.07425 20.8354L7.08235 21.0084H8.84997V20.8245C8.84997 19.9134 8.84997 19.0103 8.84727 18.11C8.84458 16.1632 8.84189 14.1516 8.85267 12.1833C8.87692 7.32192 12.6386 3.51231 17.4214 3.51231H17.4322V3.51772ZM18.7903 7.12725C15.8774 10.0473 13.1263 12.8079 10.3266 15.6333C10.1191 15.8442 9.96822 16.1849 9.96283 16.4634C9.94128 17.5313 9.94399 18.5831 9.94668 19.6971C9.94668 20.0702 9.94935 20.4433 9.94935 20.8245V21.0084H24.8719V20.8245C24.8719 19.9161 24.8746 19.013 24.88 18.1127C24.8881 15.9496 24.8989 13.7136 24.8531 11.5263C24.8261 10.1933 24.3627 8.9604 23.4384 7.75452L23.3118 7.58959L18.0493 12.8998L17.1196 12.213L22.6705 6.68654L20.6199 5.29409L18.7903 7.12725ZM17.0307 4.54245C15.1014 4.54245 13.1963 5.49958 11.8032 7.16781C10.27 9.00637 9.62332 11.3722 10.0302 13.6623L10.0922 14.0056L19.181 4.94531L18.9008 4.85068C18.2945 4.64789 17.6666 4.54245 17.0307 4.54245Z">
@@ -277,7 +276,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-100 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -292,8 +291,7 @@
                                                                 y="0.59375"
                                                                 width="111.075"
                                                                 height="111.075"
-                                                                rx="55.5375"
-                                                                fill="#2D6F6D">
+                                                                rx="55.5375">
                                                             </rect>
                                                             <path
                                                                 d="M41.8204 79.465C40.5 79.465 40.4219 79.3866 40.4219 78.0888C40.4219 63.5182 40.4219 48.9449 40.4219 34.3716C40.4219 33.0629 40.4866 32.998 41.8204 32.998H70.3532C71.6736 32.998 71.7517 33.0765 71.7517 34.3743C71.7517 39.8386 71.7517 56.2315 71.7517 56.2315C71.7517 56.2315 71.7517 72.6245 71.7517 78.0888C71.7517 79.3974 71.687 79.4623 70.3532 79.4623H55.0642L41.8204 79.465ZM46.2233 34.7258C49.1038 35.9073 52.2538 37.1132 55.8564 38.411C56.5193 38.6489 56.7537 38.9707 56.751 39.6331C56.7375 50.5671 56.7375 61.7337 56.751 72.8218C56.751 73.487 56.5112 73.8195 55.8645 74.0521C53.6038 74.8605 51.3133 75.7122 49.1011 76.5368C48.4221 76.7883 47.7457 77.0424 47.0667 77.2939C46.8592 77.3723 46.6544 77.4588 46.455 77.5453C46.3634 77.5832 46.2745 77.6237 46.1829 77.6616L46.032 77.7238L46.1506 78.1293H70.3802V34.3743H46.2907L46.2233 34.7258ZM41.7665 77.7616L41.9901 77.7103C42.0683 77.6913 42.1383 77.6778 42.203 77.6643C42.3377 77.6373 42.4644 77.6129 42.5856 77.567C43.747 77.1371 44.9083 76.7045 46.0724 76.2746C48.899 75.2255 51.8226 74.1386 54.7031 73.0949C55.3795 72.8489 55.4361 72.4028 55.4361 71.8836C55.428 60.836 55.4253 50.8591 55.4468 40.6281C55.4495 39.9008 55.1908 39.5385 54.493 39.287C51.7499 38.2947 48.9691 37.2673 46.2799 36.2723C45.1482 35.8532 44.0164 35.4341 42.8847 35.0178C42.6961 34.9475 42.5021 34.8907 42.3 34.8312C42.203 34.8042 42.106 34.7744 42.0036 34.742L41.7665 34.669V77.7616Z">
@@ -317,7 +315,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-primary-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -332,8 +330,7 @@
                                                                 y="0.59375"
                                                                 width="111.075"
                                                                 height="111.075"
-                                                                rx="55.5375"
-                                                                fill="#2D6F6D">
+                                                                rx="55.5375">
                                                             </rect>
                                                             <path
                                                                 d="M39.235 71.8147C38.9466 71.812 38.688 71.8093 38.4535 71.8093C37.4565 71.8066 36.9068 71.8066 36.6859 71.5822C36.4676 71.3605 36.4703 70.8224 36.4784 69.8464C36.4811 69.6192 36.4811 69.3678 36.4811 69.0893C36.4811 68.9244 36.4811 68.7621 36.4784 68.5972C36.4757 68.2295 36.473 67.851 36.4811 67.4806V67.4454C36.4999 66.5342 36.5161 65.6744 35.5003 64.9715C35.0691 64.6741 34.8159 63.7521 34.7862 62.995L34.77 62.5462C34.6137 58.2905 34.4494 53.8887 33.482 49.6303C33.4093 49.3112 33.315 48.9922 33.2233 48.6867C33.1614 48.4839 33.1021 48.2811 33.0482 48.0783C32.8272 47.2564 32.3988 46.7859 31.6147 46.5074C30.0869 45.9667 29.2704 44.2741 29.7581 42.6573C30.1839 41.2459 31.4449 40.2969 32.8973 40.2969C33.0967 40.2969 33.3015 40.3158 33.5036 40.351C35.1069 40.6321 36.1901 41.7001 37.2491 42.8628C38.8631 44.6364 40.2804 46.0099 41.7032 47.1861C43.1071 48.3433 44.8747 48.9327 46.9549 48.9327C47.033 48.9327 47.1112 48.9327 47.192 48.93C48.3642 48.9057 49.6253 48.8949 51.1612 48.8949C52.142 48.8949 53.1201 48.9003 54.1009 48.903C55.044 48.9084 55.9898 48.9111 56.9329 48.9111C59.8431 48.9111 60.9883 50.0575 61.0125 52.9992C61.0152 53.1614 61.0125 53.3236 61.0125 53.5372V54.0753H73.0438C75.9998 54.0753 78.9584 54.0753 81.9144 54.0753C83.7359 54.0753 84.1805 54.5187 84.1832 56.3383C84.1832 56.9818 84.1832 57.628 84.1832 58.2715C84.1805 59.9343 84.0754 60.0966 82.5557 60.7455L82.4668 60.7833V60.8807C82.4668 61.0726 82.4641 61.2646 82.4614 61.4593C82.456 61.8946 82.4479 62.3461 82.4722 62.7949C82.5368 64.036 82.1299 64.8985 81.1895 65.5095C80.8931 65.7015 80.7719 66.2233 80.7638 66.5072C80.7261 67.8348 80.7234 69.2083 80.7503 70.7035C80.7584 71.1117 80.6803 71.3929 80.5132 71.5633C80.3542 71.7255 80.0955 71.8066 79.7264 71.8066H79.7021C79.527 71.8039 79.3599 71.8039 79.2063 71.8039L78.4195 71.8066C76.9105 71.8066 76.9105 71.8066 76.7084 70.26C76.668 69.9464 76.6168 69.5571 76.5441 69.1028C76.4309 68.4053 76.3339 67.7158 76.2315 66.9831C76.183 66.6478 76.1372 66.3071 76.086 65.9638L76.0671 65.8394H41.1454L41.1265 65.9665C41.0592 66.4477 40.9891 66.9236 40.9218 67.394C40.7547 68.5323 40.5984 69.6111 40.4691 70.7116C40.3748 71.5173 40.0487 71.8174 39.2673 71.8174L39.235 71.8147ZM37.8823 70.6764L38.0898 70.5818C38.238 70.5142 38.3942 70.4574 38.5451 70.406C38.8927 70.2817 39.146 70.1924 39.1865 69.987C39.3751 69.0001 39.5044 68.024 39.6419 66.9885C39.685 66.6586 39.7281 66.3234 39.7766 65.9881L39.7981 65.8232H37.885V70.6764H37.8823ZM77.4522 65.9881C77.5087 66.3801 77.5653 66.7587 77.6219 67.1318C77.7513 67.9781 77.8725 68.7757 77.9452 69.5787C77.9991 70.16 78.2336 70.4439 78.6647 70.4439C78.8156 70.4439 78.9908 70.4114 79.2333 70.3357L79.3357 70.3033V65.8205H77.4279L77.4522 65.9881ZM78.1366 64.4091C78.5462 64.4091 78.8965 64.4226 79.2063 64.4334C79.4381 64.4415 79.6429 64.4496 79.8207 64.4496C80.2842 64.4496 80.6156 64.4037 80.8392 64.1739C81.2111 63.7872 81.1814 62.9896 81.1141 61.0591C81.1114 60.9807 81.0763 60.9185 81.044 60.859C81.0332 60.8374 81.0198 60.8131 81.0063 60.7887L80.9793 60.7293L80.9174 60.7103C80.8958 60.7022 80.8716 60.6941 80.8473 60.686C80.7799 60.659 80.6937 60.6292 80.6021 60.6238C79.9069 60.6022 79.4919 60.5454 79.4973 59.9452C79.5027 59.3071 79.9258 59.2584 80.6183 59.2557H80.691C80.9497 59.253 81.2084 59.253 81.4644 59.253H82.7739V55.5299H41.3206V59.2503C41.3206 59.2503 67.2639 59.2503 75.6495 59.2503C75.7519 59.2503 75.857 59.2422 75.9647 59.2368C76.0644 59.2314 76.1668 59.2233 76.2638 59.2233C76.4282 59.2233 76.5495 59.2422 76.6465 59.2881C76.9375 59.4206 77.2582 59.7532 77.2582 59.9208C77.2582 60.0722 77.0102 60.3318 76.6303 60.5833C76.5845 60.613 76.5117 60.6265 76.404 60.6265C76.3366 60.6265 76.2665 60.6211 76.1965 60.6157C76.121 60.6103 76.0456 60.6049 75.9755 60.6049C75.9755 60.6049 63.3865 60.6076 57.6578 60.6076C52.4438 60.6076 47.2325 60.6076 42.0185 60.6049C40.4206 60.6049 39.9301 60.1074 39.9221 58.4824C39.9032 54.7134 39.3966 51.4499 38.3727 48.5055C37.8419 46.9752 37.0577 45.3502 35.9125 43.3954C35.2685 42.2977 34.2015 41.6677 32.9889 41.6677C32.935 41.6677 32.8811 41.6677 32.8273 41.6704C31.8114 41.7164 31.162 42.2868 30.9976 43.2818C30.9114 43.8064 31.0434 44.3606 31.3506 44.7662C31.6174 45.1177 31.9946 45.3367 32.415 45.3827C33.2934 45.48 33.6626 45.9937 33.9455 46.7345C34.2257 47.4646 34.5114 48.2514 34.7081 49.0571C35.7805 53.4453 35.9584 57.9011 36.0607 62.4597C36.1012 64.2685 36.2494 64.4145 38.0547 64.4145C38.0547 64.4145 55.5048 64.4172 59.2772 64.4172C65.5583 64.4172 71.8366 64.4145 78.115 64.4064H78.1366V64.4091ZM41.0781 53.9969H59.6598C59.6598 53.9969 59.6599 53.5291 59.6625 53.3777C59.6625 53.0641 59.6652 52.7775 59.6598 52.4882C59.6329 50.9362 58.9835 50.2954 57.4153 50.2738C57.1755 50.2711 56.9383 50.2684 56.6985 50.2684L55.5937 50.2711C54.8069 50.2711 54.0201 50.263 53.2306 50.2549C52.4411 50.2467 51.6516 50.2386 50.862 50.2386C49.7142 50.2386 48.7657 50.2549 47.8792 50.29C47.7094 50.2954 47.5396 50.3008 47.3726 50.3008C44.6295 50.3008 42.172 49.3924 39.8628 47.5213L39.5341 47.2564L41.0781 53.9969Z">
@@ -357,7 +354,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -385,7 +382,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -425,7 +422,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -465,7 +462,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -509,7 +506,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -588,7 +585,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -616,7 +613,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -647,7 +644,7 @@
                                             <div
                                                 class="flex w-full justify-center">
                                                 <div
-                                                    class="mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#EEF1F1] group-hover:bg-green-200">
+                                                    class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
                                                         class="text-black group-hover:text-white">
                                                         <svg class="fill-current"
@@ -706,7 +703,7 @@
             </div>
             <div class="section-style-one new-products mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="max-w-[1261px] px-6 mx-auto">
+                    <div class="mx-auto max-w-[1261px] px-6">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
@@ -1355,11 +1352,11 @@
             </div>
             <div>
                 <div class="mb-[60px] w-full lg:h-[460px]">
-                    <div class="max-w-[1261px] px-6 mx-auto h-full">
+                    <div class="mx-auto h-full max-w-[1261px] px-6">
                         <div class="h-full items-center">
                             <div data-aos="fade-right"
                                 class="campaign-countdown aos-init mb-5 h-full w-full lg:mb-0"
-                                style="background: url(&quot;/assets/images/campaign-cover-countdown-2.jpg&quot;) 0% 0% / cover no-repeat;">
+                                style="background: url({{ Vite::image('banners/bnr_campaign-countdown.jpg') }}) 0% 0% / cover no-repeat;">
                                 <a href="/flash-sale">
                                     <div class="w-full p-5 xl:p-12">
                                         <div
@@ -1454,7 +1451,7 @@
                 </div>
             </div>
             <div class="products-ads-section mb-[60px] w-full">
-                <div class="max-w-[1261px] px-6 mx-auto">
+                <div class="mx-auto max-w-[1261px] px-6">
                     <div
                         class="h-full w-full items-center overflow-hidden sm:flex sm:h-[290px] sm:space-x-5 xl:space-x-[30px]">
                         <div data-aos="fade-right"
@@ -1475,7 +1472,7 @@
             </div>
             <div class="section-style-one feature-products mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="max-w-[1261px] px-6 mx-auto">
+                    <div class="mx-auto max-w-[1261px] px-6">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
@@ -1821,7 +1818,7 @@
                 </div>
             </div>
             <div class="section-wrapper top-selling-product mb-[60px] w-full">
-                <div class="max-w-[1261px] px-6 mx-auto">
+                <div class="mx-auto max-w-[1261px] px-6">
                     <div
                         class="section-title mb-5 flex items-center justify-between">
                         <div>
@@ -2224,7 +2221,7 @@
                 </div>
             </div>
             <div class="products-ads-section mb-[60px] w-full">
-                <div class="max-w-[1261px] px-6 mx-auto">
+                <div class="mx-auto max-w-[1261px] px-6">
                     <div
                         class="undefined w-full items-center overflow-hidden">
                         <div data-aos="fade-right"
@@ -2238,7 +2235,7 @@
             </div>
             <div class="section-style-one new-arrivals mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="max-w-[1261px] px-6 mx-auto">
+                    <div class="mx-auto max-w-[1261px] px-6">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
@@ -3190,7 +3187,7 @@
                 </div>
             </div>
             <div class="products-ads-section mb-[60px] w-full">
-                <div class="max-w-[1261px] px-6 mx-auto">
+                <div class="mx-auto max-w-[1261px] px-6">
                     <div class="164 w-full items-center overflow-hidden">
                         <div data-aos="fade-right"
                             class="aos-init mb-5 h-full w-full sm:mb-0"><a
@@ -3203,7 +3200,7 @@
             </div>
             <div class="section-style-one category-products mb-[60px]">
                 <div class="section-wrapper w-full">
-                    <div class="max-w-[1261px] px-6 mx-auto">
+                    <div class="mx-auto max-w-[1261px] px-6">
                         <div
                             class="section-title mb-5 flex items-center justify-between">
                             <div>
