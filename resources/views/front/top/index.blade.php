@@ -1360,53 +1360,56 @@
                                 >
                                 <a href="/flash-sale">
                                     <div class="w-full p-5 xl:p-12"
-                                                                                name="launch-countdown"
-                         x-data="countdown((8 * 24 * 60 * 60) + (23 * 60 * 60) + (55 * 60) + 41)"
-            x-init="init()"
-                                    
                                     >
                                         <div
-                                            class="countdown-wrapper mb-10 flex w-full space-x-[23px]">
-                                            <div class="countdown-item">
-                                                <div
-                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
-                                                    <span
-                                                        class="font-700 text-[14px] text-[#EB5757] sm:text-[30px]">104</span>
-                                                </div>
-                                                <p
-                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
-                                                    Days</p>
-                                            </div>
-                                            <div class="countdown-item">
-                                                <div
-                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
-                                                    <span
-                                                        class="font-700 text-[14px] text-[#2F80ED] sm:text-[30px]">18</span>
-                                                </div>
-                                                <p
-                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
-                                                     Hours</p>
-                                            </div>
-                                            <div class="countdown-item">
-                                                <div
-                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
-                                                    <span
-                                                        class="font-700 text-[14px] text-[#219653] sm:text-[30px]">8</span>
-                                                </div>
-                                                <p
-                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
-                                                    Minutes</p>
-                                            </div>
-                                            <div class="countdown-item">
-                                                <div
-                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
-                                                    <span
-                                                        class="font-700 text-[14px] text-[#EF5DA8] sm:text-[30px]">31</span>
-                                                </div>
-                                                <p
-                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
-                                                    Seconds</p>
-                                            </div>
+                                            class="countdown-wrapper mb-10 flex w-full space-x-[23px]"
+                                            name="launch-countdown"
+                                            x-data="countdown((8 * 24 * 60 * 60) + (23 * 60 * 60) + (55 * 60) + 41)"
+                                            x-init="init()"
+                                            >
+                                                <time>
+
+                                                                                                <div class="countdown-item">
+                                                                <div
+                                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
+                                                                    <span
+                                                                        class="font-700 text-[14px] text-[#EB5757] sm:text-[30px]"  x-text="getDays()"></span>
+                                                                </div>
+                                                                <p
+                                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
+                                                                    Days</p>
+                                                            </div>
+                                                            <div class="countdown-item">
+                                                                <div
+                                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
+                                                                    <span
+                                                                        class="font-700 text-[14px] text-[#2F80ED] sm:text-[30px]"  x-text="getHours()"></span>
+                                                                </div>
+                                                                <p
+                                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
+                                                                    Hours</p>
+                                                            </div>
+                                                            <div class="countdown-item">
+                                                                <div
+                                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
+                                                                    <span
+                                                                        class="font-700 text-[14px] text-[#219653] sm:text-[30px]"  x-text="getMinutes()"></span>
+                                                                </div>
+                                                                <p
+                                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
+                                                                    Minutes</p>
+                                                            </div>
+                                                            <div class="countdown-item">
+                                                                <div
+                                                                    class="countdown-number flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white sm:h-[100px] sm:w-[100px]">
+                                                                    <span
+                                                                        class="font-700 text-[14px] text-[#EF5DA8] sm:text-[30px]" x-text="getSeconds()"></span>
+                                                                </div>
+                                                                <p
+                                                                    class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
+                                                                    Seconds</p>
+                                                            </div>
+                                                </time>
                                         </div>
                                         <div class="mb-4 countdown-title">
                                             <h1
@@ -3292,8 +3295,8 @@
                                                             href="/single-product">
                                                             <p
                                                                 class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Geofarm nulla
-                                                                tempor</p>
+                                                                Geofarm nulla tempor
+                                                            </p>
                                                         </a>
                                                         <p class="price">
                                                             <span
@@ -3351,10 +3354,7 @@
                                                         <a
                                                             href="/single-product">
                                                             <p
-                                                                class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Musaphics
-                                                                consequat
-                                                                consectetur</p>
+                                                                class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">Musaphics consequat consectetur</p>
                                                         </a>
                                                         <p class="price">
                                                             <span
@@ -3385,8 +3385,8 @@
                                                             href="/single-product">
                                                             <p
                                                                 class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Quintity
-                                                                consequat</p>
+                                                                Quintity consequat
+                                                            </p>
                                                         </a>
                                                         <p class="price">
                                                             <span
@@ -3415,8 +3415,8 @@
                                                             href="/single-product">
                                                             <p
                                                                 class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Zizzle ad
-                                                                proident</p>
+                                                                Zizzle ad proident
+                                                            </p>
                                                         </a>
                                                         <p class="price">
                                                             <span
@@ -3445,8 +3445,8 @@
                                                             href="/single-product">
                                                             <p
                                                                 class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Comvoy irure
-                                                                occaecat</p>
+                                                                Comvoy irure occaecat
+                                                            </p>
                                                         </a>
                                                         <p class="price">
                                                             <span
@@ -3475,8 +3475,8 @@
                                                             href="/single-product">
                                                             <p
                                                                 class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Bluplanet
-                                                                consequat</p>
+                                                                Bluplanet consequat
+                                                            </p>
                                                         </a>
                                                         <p class="price">
                                                             <span
@@ -3507,8 +3507,7 @@
                                                             href="/single-product">
                                                             <p
                                                                 class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Empirica
-                                                                deserunt laborum
+                                                                Empirica deserunt laborum
                                                             </p>
                                                         </a>
                                                         <p class="price">
@@ -3538,8 +3537,8 @@
                                                             href="/single-product">
                                                             <p
                                                                 class="title font-600 line-clamp-1 mb-2 text-[13px] leading-[24px] text-black hover:text-blue-600 sm:text-[15px]">
-                                                                Conjurica ea
-                                                                magna</p>
+                                                                Conjurica ea magna
+                                                            </p>
                                                         </a>
                                                         <p class="price">
                                                             <span
