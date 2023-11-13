@@ -10,6 +10,7 @@ use App\Models\Post;
 class PostRepository implements PostRepositoryInterface
 {
     private Post $post;
+
     public function __construct(Post $post)
     {
         $this->post = $post;
@@ -42,7 +43,6 @@ class PostRepository implements PostRepositoryInterface
             $post->update($postUpdateRequest->toArray());
         }
     }
-
 
     public function deletePost($postId)
     {

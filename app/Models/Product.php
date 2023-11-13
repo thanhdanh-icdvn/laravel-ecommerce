@@ -26,7 +26,7 @@ class Product extends Model
 
     public function generateVariant(array $input): array
     {
-        if (!count($input)) {
+        if (! count($input)) {
             return [];
         }
 

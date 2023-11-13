@@ -28,7 +28,7 @@ class Post extends Model
     public function scopeSearch(Builder $query)
     {
         $searchTerm = request()->search;
-        if (!empty($searchTerm)) {
+        if (! empty($searchTerm)) {
             $query = $query->whereLike(['name', 'description', 'slug', 'created_at', 'updated_at'], $searchTerm);
         }
 

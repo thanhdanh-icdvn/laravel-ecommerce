@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class PostTag extends Pivot
 {
     use HasFactory;
+
     protected $table = 'post_tag'; //pivot table
 }

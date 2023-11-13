@@ -19,7 +19,6 @@ class SocialController extends Controller
      * Redirect the user to the Provider authentication page.
      *
      * @param $provider String
-     *
      * @return mixed
      */
     public function redirectToProvider($provider)
@@ -31,11 +30,10 @@ class SocialController extends Controller
      * Obtain the user information from Provider.
      *
      * @param $provider string
+     * @return \Illuminate\Http\RedirectResponse
      *
      * @throws \Exception
      * @throws \Throwable
-     *
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function handleProviderCallback($provider)
     {
@@ -46,6 +44,7 @@ class SocialController extends Controller
             if (config('app.debug')) {
                 throw $e;
             }
+
             // Lets suppress this error
             return redirect()->route('login')
                 ->with('error', __('Unable to authenticate. Please try again.'));
@@ -71,7 +70,6 @@ class SocialController extends Controller
      * Create a user if does not exist.
      *
      * @param $providerName string
-     *
      * @return mixed
      */
     protected function findOrCreateUser($providerName, ProviderUser $providerUser)
@@ -90,7 +88,7 @@ class SocialController extends Controller
             'email' => $providerUser->getEmail(),
         ]);
 
-        if (!$user->exists) {
+        if (! $user->exists) {
             $user->name = $providerUser->getName();
             $user->password = Hash::make(Str::random(16));
             $user->save();

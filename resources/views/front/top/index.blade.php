@@ -4,18 +4,18 @@
         <div class="w-full pt-[30px] pb-[60px]">
             <div class="banner-wrapper mb-[46px] w-full">
                 <div class="mx-auto max-w-[1261px] px-6">
-                    <div class="main-wrapper w-full">
+                    <div class="w-full main-wrapper">
                         <div
                             class="banner-card mb-[30px] xl:flex xl:h-[600px] xl:space-x-[30px]">
                             <div data-aos="fade-right"
-                                class="h-full w-full xl:w-1/2">
+                                class="w-full h-full xl:w-1/2">
                                 <a href="/single-product">
                                     <picture>
                                         <source media="(min-width:1025px)"
                                             srcset="{{ Vite::image('banners/bnr_001.png') }}">
                                         <img src="{{ Vite::image('banners/bnr_002.png') }}"
                                             alt=""
-                                            class="h-auto w-full max-w-full object-cover">
+                                            class="object-cover w-full h-auto max-w-full">
                                     </picture>
                                 </a>
                             </div>
@@ -25,7 +25,7 @@
                                         href="/single-product"><img
                                             src="{{ Vite::image('banners/bnr_003.png') }}"
                                             alt=""
-                                            class="h-full w-full"></a></div>
+                                            class="w-full h-full"></a></div>
                             </div>
                         </div>
                     </div>
@@ -34,17 +34,17 @@
             <div class="section-wrapper my-categories mb-[60px] w-full">
                 <div class="mx-auto max-w-[1261px] px-6">
                     <div
-                        class="section-title mb-5 flex items-center justify-between">
+                        class="flex items-center justify-between mb-5 section-title">
                         <div>
                             <h1
-                                class="font-600 text text-xl leading-none text-black sm:text-3xl">
+                                class="text-xl leading-none text-black font-600 text sm:text-3xl">
                                 My Market Category
                             </h1>
                         </div>
                         <div>
                             <a href="/all-products">
                                 <div class="flex items-center space-x-2">
-                                    <p class="font-600 text-base text-black">
+                                    <p class="text-base text-black font-600">
                                         View More</p>
                                     <span class="animate-right-dir">
                                         <svg xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -61,15 +61,15 @@
                         </div>
                     </div>
                     <div class="section-content">
-                        <div class="categories-section-wrapper w-full">
+                        <div class="w-full categories-section-wrapper">
                             <div class="mx-auto max-w-[1261px] px-6">
-                                <div class="categories-iems w-full">
+                                <div class="w-full categories-iems">
                                     <div
                                         class="mb-[46px] grid grid-cols-2 gap-10 sm:grid-cols-4 xl:grid-cols-8">
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -88,16 +88,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Sofa</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -132,16 +132,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     TV Cabinet</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -165,16 +165,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Dining</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -202,16 +202,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Wordrobe</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -229,16 +229,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Bed</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -265,16 +265,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Dressing Table</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-100 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -304,16 +304,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Door</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-primary-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -340,9 +340,9 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Divan</p>
                                             </div>
                                         </div>
@@ -350,9 +350,9 @@
                                     <div
                                         class="grid grid-cols-2 gap-10 sm:grid-cols-4 xl:grid-cols-8">
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -371,16 +371,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Office</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -411,16 +411,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Kitchen</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -451,16 +451,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Lamp</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -495,16 +495,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Reading Table</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -574,16 +574,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Mattress</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -602,16 +602,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Chest Drawers</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -633,16 +633,16 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Windows</p>
                                             </div>
                                         </div>
                                         <div
-                                            class="item group w-full cursor-pointer">
+                                            class="w-full cursor-pointer item group">
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <div
                                                     class="group-hover:bg-primary bg-main-50 mb-2.5 flex h-[110px] w-[110px] items-center justify-center rounded-full">
                                                     <span
@@ -688,9 +688,9 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="flex w-full justify-center">
+                                                class="flex justify-center w-full">
                                                 <p
-                                                    class="whitespace-nowrap text-base text-black">
+                                                    class="text-base text-black whitespace-nowrap">
                                                     Miscellaneous</p>
                                             </div>
                                         </div>
@@ -702,13 +702,13 @@
                 </div>
             </div>
             <div class="section-style-one new-products mb-[60px]">
-                <div class="section-wrapper w-full">
+                <div class="w-full section-wrapper">
                     <div class="mx-auto max-w-[1261px] px-6">
                         <div
-                            class="section-title mb-5 flex items-center justify-between">
+                            class="flex items-center justify-between mb-5 section-title">
                             <div>
                                 <h1
-                                    class="font-600 text-blacktext text-xl leading-none sm:text-3xl">
+                                    class="text-xl leading-none font-600 text-blacktext sm:text-3xl">
                                     Featured Products
                                 </h1>
                             </div>
@@ -716,7 +716,7 @@
                                 <a href="/all-products">
                                     <div class="flex items-center space-x-2">
                                         <p
-                                            class="font-600 text-base text-black">
+                                            class="text-base text-black font-600">
                                             View More</p>
                                         <span class="animate-right-dir">
                                             <svg width="17" height="14"
@@ -736,12 +736,12 @@
                             </div>
                         </div>
                         <div class="section-content">
-                            <div class="products-section w-full">
+                            <div class="w-full products-section">
                                 <div
                                     class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.10.jpg&quot;) center center no-repeat;">
@@ -842,7 +842,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.9.jpg&quot;) center center no-repeat;">
@@ -943,7 +943,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.8.jpg&quot;) center center no-repeat;">
@@ -1043,7 +1043,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.7.jpg&quot;) center center no-repeat;">
@@ -1054,8 +1054,8 @@
                                                     class="absolute left-[80px] -bottom-20 h-[54px] w-[204px] transition-all duration-300 ease-in-out group-hover:bottom-[65px]">
                                                     <button type="button"
                                                         class="yellow-btn">
-                                                        <div><span>Add To
-                                                                Cart</span>
+                                                        <div>
+                                                            <span>Add To Cart</span>
                                                         </div>
                                                     </button>
                                                 </div>
@@ -1144,7 +1144,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.6.jpg&quot;) center center no-repeat;">
@@ -1245,7 +1245,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.5.jpg&quot;) center center no-repeat;">
@@ -1353,12 +1353,18 @@
             <div>
                 <div class="mb-[60px] w-full lg:h-[460px]">
                     <div class="mx-auto h-full max-w-[1261px] px-6">
-                        <div class="h-full items-center">
+                        <div class="items-center h-full">
                             <div data-aos="fade-right"
-                                class="campaign-countdown aos-init mb-5 h-full w-full lg:mb-0"
-                                style="background: url({{ Vite::image('banners/bnr_campaign-countdown.jpg') }}) 0% 0% / cover no-repeat;">
+                                class="w-full h-full mb-5 campaign-countdown aos-init lg:mb-0"
+                                style="background: url({{ Vite::image('banners/bnr_campaign-countdown.jpg') }}) 0% 0% / cover no-repeat;"
+                                >
                                 <a href="/flash-sale">
-                                    <div class="w-full p-5 xl:p-12">
+                                    <div class="w-full p-5 xl:p-12"
+                                                                                name="launch-countdown"
+                         x-data="countdown((8 * 24 * 60 * 60) + (23 * 60 * 60) + (55 * 60) + 41)"
+            x-init="init()"
+                                    
+                                    >
                                         <div
                                             class="countdown-wrapper mb-10 flex w-full space-x-[23px]">
                                             <div class="countdown-item">
@@ -1379,7 +1385,7 @@
                                                 </div>
                                                 <p
                                                     class="font-500 text-center text-[12px] leading-8 sm:text-[18px]">
-                                                    Hours</p>
+                                                     Hours</p>
                                             </div>
                                             <div class="countdown-item">
                                                 <div
@@ -1402,7 +1408,7 @@
                                                     Seconds</p>
                                             </div>
                                         </div>
-                                        <div class="countdown-title mb-4">
+                                        <div class="mb-4 countdown-title">
                                             <h1
                                                 class="font-600 text-[44px] text-black">
                                                 WOO! Flash Sale</h1>
@@ -1415,9 +1421,9 @@
                                         </div>
                                         <div class="h-10 w-[119px]">
                                             <div
-                                                class="yellow-btn inline-flex items-center space-x-2">
+                                                class="inline-flex items-center space-x-2 yellow-btn">
                                                 <span
-                                                    class="font-600 text-sm leading-7 tracking-wide">Shop
+                                                    class="text-sm leading-7 tracking-wide font-600">Shop
                                                     Now</span>
                                                 <span>
                                                     <svg width="7"
@@ -1455,29 +1461,29 @@
                     <div
                         class="h-full w-full items-center overflow-hidden sm:flex sm:h-[290px] sm:space-x-5 xl:space-x-[30px]">
                         <div data-aos="fade-right"
-                            class="aos-init mb-5 h-full w-full sm:mb-0 sm:w-1/2">
+                            class="w-full h-full mb-5 aos-init sm:mb-0 sm:w-1/2">
                             <a href="/single-product"><img
                                     src="/assets/images/ads-2.2.png"
                                     alt=""
-                                    class="h-auto w-full sm:h-full"></a>
+                                    class="w-full h-auto sm:h-full"></a>
                         </div>
                         <div data-aos="fade-left"
-                            class="aos-init h-full flex-1"><a
+                            class="flex-1 h-full aos-init"><a
                                 href="/single-product"><img
                                     src="/assets/images/ads-2.1.png"
-                                    alt="" class="h-full w-full"></a>
+                                    alt="" class="w-full h-full"></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="section-style-one feature-products mb-[60px]">
-                <div class="section-wrapper w-full">
+                <div class="w-full section-wrapper">
                     <div class="mx-auto max-w-[1261px] px-6">
                         <div
-                            class="section-title mb-5 flex items-center justify-between">
+                            class="flex items-center justify-between mb-5 section-title">
                             <div>
                                 <h1
-                                    class="font-600 text-blacktext text-xl leading-none sm:text-3xl">
+                                    class="text-xl leading-none font-600 text-blacktext sm:text-3xl">
                                     Popular Sales
                                 </h1>
                             </div>
@@ -1485,7 +1491,7 @@
                                 <a href="/all-products">
                                     <div class="flex items-center space-x-2">
                                         <p
-                                            class="font-600 text-base text-black">
+                                            class="text-base text-black font-600">
                                             View More</p>
                                         <span class="animate-right-dir">
                                             <svg width="17" height="14"
@@ -1505,12 +1511,12 @@
                             </div>
                         </div>
                         <div class="section-content">
-                            <div class="products-section w-full">
+                            <div class="w-full products-section">
                                 <div
                                     class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.4.jpg&quot;) center center no-repeat;">
@@ -1611,7 +1617,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.5.jpg&quot;) center center no-repeat;">
@@ -1712,7 +1718,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.6.jpg&quot;) center center no-repeat;">
@@ -1820,17 +1826,17 @@
             <div class="section-wrapper top-selling-product mb-[60px] w-full">
                 <div class="mx-auto max-w-[1261px] px-6">
                     <div
-                        class="section-title mb-5 flex items-center justify-between">
+                        class="flex items-center justify-between mb-5 section-title">
                         <div>
                             <h1
-                                class="font-600 text-blacktext text-xl leading-none sm:text-3xl">
+                                class="text-xl leading-none font-600 text-blacktext sm:text-3xl">
                                 Top Selling Products
                             </h1>
                         </div>
                         <div>
                             <a href="/all-products">
                                 <div class="flex items-center space-x-2">
-                                    <p class="font-600 text-base text-black">
+                                    <p class="text-base text-black font-600">
                                         View More</p>
                                     <span class="animate-right-dir">
                                         <svg width="17" height="14"
@@ -1851,18 +1857,18 @@
                     <div class="section-content">
                         <div
                             class="section-content grid w-full grid-cols-1 gap-5 sm:grid-cols-2 xl:gap-[30px]">
-                            <div class="item w-full">
+                            <div class="w-full item">
                                 <div data-aos="fade-left"
                                     class="product-row-card-style-one-two aos-init group relative h-[250px] w-full overflow-hidden bg-white">
                                     <div
                                         class="flex h-full w-full items-center space-x-5 p-[16px]">
-                                        <div class="h-full w-1/3"><img
+                                        <div class="w-1/3 h-full"><img
                                                 src="/assets/images/product-img-2.4.jpg"
                                                 alt=""
-                                                class="h-full w-full object-contain">
+                                                class="object-contain w-full h-full">
                                         </div>
                                         <div
-                                            class="flex h-full flex-1 flex-col justify-center">
+                                            class="flex flex-col justify-center flex-1 h-full">
                                             <div>
                                                 <a href="/single-product">
                                                     <p
@@ -1886,7 +1892,7 @@
                                         class="quick-access-btns absolute -right-10 top-[30px] flex flex-col space-y-2 transition-all duration-300 ease-in-out group-hover:right-4">
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="20"
                                                     viewBox="0 0 20 20"
@@ -1909,7 +1915,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="21"
                                                     height="18"
                                                     viewBox="0 0 21 18"
@@ -1923,7 +1929,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="22"
                                                     viewBox="0 0 20 22"
@@ -1941,18 +1947,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item w-full">
+                            <div class="w-full item">
                                 <div data-aos="fade-left"
                                     class="product-row-card-style-one-two aos-init group relative h-[250px] w-full overflow-hidden bg-white">
                                     <div
                                         class="flex h-full w-full items-center space-x-5 p-[16px]">
-                                        <div class="h-full w-1/3"><img
+                                        <div class="w-1/3 h-full"><img
                                                 src="/assets/images/product-img-2.5.jpg"
                                                 alt=""
-                                                class="h-full w-full object-contain">
+                                                class="object-contain w-full h-full">
                                         </div>
                                         <div
-                                            class="flex h-full flex-1 flex-col justify-center">
+                                            class="flex flex-col justify-center flex-1 h-full">
                                             <div>
                                                 <a href="/single-product">
                                                     <p
@@ -1977,7 +1983,7 @@
                                         class="quick-access-btns absolute -right-10 top-[30px] flex flex-col space-y-2 transition-all duration-300 ease-in-out group-hover:right-4">
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="20"
                                                     viewBox="0 0 20 20"
@@ -2000,7 +2006,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="21"
                                                     height="18"
                                                     viewBox="0 0 21 18"
@@ -2014,7 +2020,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="22"
                                                     viewBox="0 0 20 22"
@@ -2032,18 +2038,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item w-full">
+                            <div class="w-full item">
                                 <div data-aos="fade-left"
                                     class="product-row-card-style-one-two aos-init group relative h-[250px] w-full overflow-hidden bg-white">
                                     <div
                                         class="flex h-full w-full items-center space-x-5 p-[16px]">
-                                        <div class="h-full w-1/3"><img
+                                        <div class="w-1/3 h-full"><img
                                                 src="/assets/images/product-img-2.6.jpg"
                                                 alt=""
-                                                class="h-full w-full object-contain">
+                                                class="object-contain w-full h-full">
                                         </div>
                                         <div
-                                            class="flex h-full flex-1 flex-col justify-center">
+                                            class="flex flex-col justify-center flex-1 h-full">
                                             <div>
                                                 <a href="/single-product">
                                                     <p
@@ -2069,7 +2075,7 @@
                                         class="quick-access-btns absolute -right-10 top-[30px] flex flex-col space-y-2 transition-all duration-300 ease-in-out group-hover:right-4">
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="20"
                                                     viewBox="0 0 20 20"
@@ -2092,7 +2098,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="21"
                                                     height="18"
                                                     viewBox="0 0 21 18"
@@ -2106,7 +2112,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="22"
                                                     viewBox="0 0 20 22"
@@ -2124,18 +2130,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item w-full">
+                            <div class="w-full item">
                                 <div data-aos="fade-left"
                                     class="product-row-card-style-one-two aos-init group relative h-[250px] w-full overflow-hidden bg-white">
                                     <div
                                         class="flex h-full w-full items-center space-x-5 p-[16px]">
-                                        <div class="h-full w-1/3"><img
+                                        <div class="w-1/3 h-full"><img
                                                 src="/assets/images/product-img-2.7.jpg"
                                                 alt=""
-                                                class="h-full w-full object-contain">
+                                                class="object-contain w-full h-full">
                                         </div>
                                         <div
-                                            class="flex h-full flex-1 flex-col justify-center">
+                                            class="flex flex-col justify-center flex-1 h-full">
                                             <div>
                                                 <a href="/single-product">
                                                     <p
@@ -2161,7 +2167,7 @@
                                         class="quick-access-btns absolute -right-10 top-[30px] flex flex-col space-y-2 transition-all duration-300 ease-in-out group-hover:right-4">
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="20"
                                                     viewBox="0 0 20 20"
@@ -2184,7 +2190,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="21"
                                                     height="18"
                                                     viewBox="0 0 21 18"
@@ -2198,7 +2204,7 @@
                                         </a>
                                         <a href="#">
                                             <span
-                                                class="bg-primarygray flex h-10 w-10 items-center justify-center rounded">
+                                                class="flex items-center justify-center w-10 h-10 rounded bg-primarygray">
                                                 <svg width="20"
                                                     height="22"
                                                     viewBox="0 0 20 22"
@@ -2223,24 +2229,24 @@
             <div class="products-ads-section mb-[60px] w-full">
                 <div class="mx-auto max-w-[1261px] px-6">
                     <div
-                        class="undefined w-full items-center overflow-hidden">
+                        class="items-center w-full overflow-hidden undefined">
                         <div data-aos="fade-right"
-                            class="aos-init mb-5 h-full w-full sm:mb-0"><a
+                            class="w-full h-full mb-5 aos-init sm:mb-0"><a
                                 href="/single-product"><img
                                     src="/assets/images/ads-2.3.png"
                                     alt=""
-                                    class="h-auto w-full sm:h-full"></a></div>
+                                    class="w-full h-auto sm:h-full"></a></div>
                     </div>
                 </div>
             </div>
             <div class="section-style-one new-arrivals mb-[60px]">
-                <div class="section-wrapper w-full">
+                <div class="w-full section-wrapper">
                     <div class="mx-auto max-w-[1261px] px-6">
                         <div
-                            class="section-title mb-5 flex items-center justify-between">
+                            class="flex items-center justify-between mb-5 section-title">
                             <div>
                                 <h1
-                                    class="font-600 text-blacktext text-xl leading-none sm:text-3xl">
+                                    class="text-xl leading-none font-600 text-blacktext sm:text-3xl">
                                     New Arrivals
                                 </h1>
                             </div>
@@ -2248,7 +2254,7 @@
                                 <a href="/all-products">
                                     <div class="flex items-center space-x-2">
                                         <p
-                                            class="font-600 text-base text-black">
+                                            class="text-base text-black font-600">
                                             View More</p>
                                         <span class="animate-right-dir">
                                             <svg width="17"
@@ -2269,12 +2275,12 @@
                             </div>
                         </div>
                         <div class="section-content">
-                            <div class="products-section w-full">
+                            <div class="w-full products-section">
                                 <div
                                     class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.10.jpg&quot;) center center no-repeat;">
@@ -2375,7 +2381,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.9.jpg&quot;) center center no-repeat;">
@@ -2476,7 +2482,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.8.jpg&quot;) center center no-repeat;">
@@ -2576,7 +2582,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.7.jpg&quot;) center center no-repeat;">
@@ -2677,7 +2683,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.6.jpg&quot;) center center no-repeat;">
@@ -2778,7 +2784,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.5.jpg&quot;) center center no-repeat;">
@@ -2879,7 +2885,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.4.jpg&quot;) center center no-repeat;">
@@ -2980,7 +2986,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.3.jpg&quot;) center center no-repeat;">
@@ -3081,7 +3087,7 @@
                                     </div>
                                     <div data-aos="fade-up"
                                         class="item aos-init">
-                                        <div class="product-card-style-one-two group relative h-full w-full overflow-hidden bg-white"
+                                        <div class="relative w-full h-full overflow-hidden bg-white product-card-style-one-two group"
                                             style="box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 64px 0px;">
                                             <div class="product-card-img mt-4 h-[322px] w-full"
                                                 style="background: url(&quot;/assets/images/product-img-2.1.jpg&quot;) center center no-repeat;">
@@ -3188,24 +3194,24 @@
             </div>
             <div class="products-ads-section mb-[60px] w-full">
                 <div class="mx-auto max-w-[1261px] px-6">
-                    <div class="164 w-full items-center overflow-hidden">
+                    <div class="items-center w-full overflow-hidden 164">
                         <div data-aos="fade-right"
-                            class="aos-init mb-5 h-full w-full sm:mb-0"><a
+                            class="w-full h-full mb-5 aos-init sm:mb-0"><a
                                 href="/single-product"><img
                                     src="/assets/images/ads-2.4.png"
                                     alt=""
-                                    class="h-auto w-full sm:h-full"></a></div>
+                                    class="w-full h-auto sm:h-full"></a></div>
                     </div>
                 </div>
             </div>
             <div class="section-style-one category-products mb-[60px]">
-                <div class="section-wrapper w-full">
+                <div class="w-full section-wrapper">
                     <div class="mx-auto max-w-[1261px] px-6">
                         <div
-                            class="section-title mb-5 flex items-center justify-between">
+                            class="flex items-center justify-between mb-5 section-title">
                             <div>
                                 <h1
-                                    class="font-600 text-blacktext text-xl leading-none sm:text-3xl">
+                                    class="text-xl leading-none font-600 text-blacktext sm:text-3xl">
                                     Popular Sales
                                 </h1>
                             </div>
@@ -3213,7 +3219,7 @@
                                 <a href="/all-products">
                                     <div class="flex items-center space-x-2">
                                         <p
-                                            class="font-600 text-base text-black">
+                                            class="text-base text-black font-600">
                                             View More</p>
                                         <span class="animate-right-dir">
                                             <svg width="17"
@@ -3234,24 +3240,24 @@
                             </div>
                         </div>
                         <div class="section-content">
-                            <div class="products-section w-full">
+                            <div class="w-full products-section">
                                 <div
                                     class="grid grid-cols-1 lg:grid-cols-3 lg:gap-5 xl:gap-[30px]">
                                     <div class="item-col">
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.10.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3269,19 +3275,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.9.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3299,19 +3305,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.8.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3329,19 +3335,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.7.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3362,19 +3368,19 @@
                                     </div>
                                     <div class="item-col">
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.6.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3392,19 +3398,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.5.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3422,19 +3428,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.4.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3452,19 +3458,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.3.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3484,19 +3490,19 @@
                                     </div>
                                     <div class="item-col">
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.1.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3515,19 +3521,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.11.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3545,19 +3551,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.10.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p
@@ -3575,19 +3581,19 @@
                                             </div>
                                         </div>
                                         <div data-aos="fade-up"
-                                            class="product-card-row-two aos-init w-full">
+                                            class="w-full product-card-row-two aos-init">
                                             <div
                                                 class="border-primarygray h-[105px] w-full border bg-white px-5">
                                                 <div
-                                                    class="flex h-full w-full items-center justify-center space-x-5">
+                                                    class="flex items-center justify-center w-full h-full space-x-5">
                                                     <div
                                                         class="h-[75px] w-[75px]">
                                                         <img src="/assets/images/product-img-2.9.jpg"
                                                             alt=""
-                                                            class="h-full w-full object-cover">
+                                                            class="object-cover w-full h-full">
                                                     </div>
                                                     <div
-                                                        class="flex h-full flex-1 flex-col justify-center">
+                                                        class="flex flex-col justify-center flex-1 h-full">
                                                         <a
                                                             href="/single-product">
                                                             <p

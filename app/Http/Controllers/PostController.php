@@ -43,7 +43,7 @@ class PostController extends Controller
             $new_filename = time() . '_' . $filename;
             $upload = Storage::disk('public')->put($path . $new_filename, (string) file_get_contents($file));
             $post_thumbnails_path = $path . 'thumbnails';
-            if (!Storage::disk('public')->exists($post_thumbnails_path)) {
+            if (! Storage::disk('public')->exists($post_thumbnails_path)) {
                 Storage::disk('public')->makeDirectory($post_thumbnails_path);
             }
 
